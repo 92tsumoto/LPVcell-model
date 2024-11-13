@@ -1,0 +1,587 @@
+###################################
+# Rat pulmonary vein myocyte model PVCmodel_170924 Steadystate is established at Catotal 1->0.8, IP3 0.015
+
+init vm=-6.689316432168441e+01
+init O_TM=2.373716002938098e-05,I2_TM=3.693323599007559e-02,Is_TM=6.307580154351491e-01
+init a_Kur=3.124517446783664e-03,i_Kur=9.782429093682684e-01
+init pr=7.179295072639768e-03,s_slow=9.583803412456788e-01
+init Yco_iz=9.999077498743347e-01,Yoc_iz=4.482660383957518e-09,Yoo_iz=7.694166885218704e-05
+init Yco_blk=9.999173537634721e-01,Yoc_blk=3.743654760621212e-09,Yoo_blk=7.694240785781039e-05
+init y1=1.069459196357345e-03,y2=1.069651678219898e-03,y3=9.863907751452232e-01
+init Pbspm=8.825611588598955e-01
+init E1NCX_jnc=3.879100152161845e-01,I1NCX_jnc=1.218446829175160e-01,I2NCX_jnc=4.874140378077345e-01
+init E1NCX_iz=2.750502609507200e-01,I1NCX_iz=1.411563707726636e-01,I2NCX_iz=5.823313868284673e-01
+init E1NCX_blk=1.195701042221352e-01,I1NCX_blk=1.701373552985479e-01,I2NCX_blk=7.098830010088018e-01
+init Yooo=3.763153004055870e-05,Yooc=3.930748811381748e-05,Ycoo=5.911462049167457e-05,Ycoc=9.998373192219061e-01
+init Ycco=4.686127463307292e-09,Yoco=1.512501269898558e-09,Yocc=5.620856925316709e-09
+init R_ip3=5.087328530018734e-01,O_ip3=1.155061158211195e-02,I_1_ip3=1.751597345861541e-01,I_2_ip3=1.862307598523886e-01,A_ip3=1.182836750763077e-01
+init Cafree_j=3.493607629224068e-04,Cafree_z=2.055105830553742e-04,Cafree_b=7.042011095532934e-05
+init Ca_SRup=8.258273147173774e-01,Cafree_r=7.243929763216279e-01
+init Nai=5.681552914757686e+00,Ki=1.170470075707649e+02
+init ARS464=1.626437942500380e-07,ARS301=6.045316911352540e-07,GsaGTP=2.947392354238951e-05,Gsbg=4.911404319942659e-07
+init GsaGDP=5.001721761059542e-05,cAMP=1.532598922421271e-04,Cat=6.029356359498188e-05,y_PKA=1.507339089319436e-01
+
+# control parameter candidate
+par rate_kbg = 1.0
+par conIP3 = 0.015
+# ISO = 1nM
+par Ligand = 0.000001
+#Ligand = Ligandtot
+par Istim = 0.0
+# **********PhysicalContents**********
+R=8.3143*1.0
+Faraday=96.4867*1.0
+TempK=310.0*1.0
+RTF=R*TempK/Faraday
+RTF2=R*TempK/(Faraday*2)
+
+# **********ExternalIonConcentrations**********
+Cao=1.8*1.0
+Nao=140.0*1.0
+Ko =5.4*1.0
+
+# '********** Cell size and related Parameters **********
+Sc=0.59*1.0
+# Membrane Capacitance (pF)
+Cm=192.46*Sc
+# Cell Volume (volumes of each compartment) (L)
+Vcell=22373.0*1.0 
+Vblk = Vcell*0.68
+Viz = Vcell*0.035
+Vjnc = Vcell*0.008
+Vcyt = Vjnc + Viz + Vblk
+Vsr = Vcell*0.072
+Vsr_rl = Vsr*0.225
+Vsr_up = Vsr*0.775
+
+# Fraction of Currents jnc, iz, blk
+Frc_iz = 0.1*1.0
+Frc_blk = 0.9*1.0
+Frc_CaL_j = 0.75*1.0
+Frc_CaL_z = 0.15*1.0
+Frc_CaL_b = 0.10*1.0
+Frc_NCX_j = 0.03*1.0
+Frc_NCX_z = 0.25*1.0
+Frc_NCX_b = 0.72*1.0
+
+# Cytosol Pi, AMP, ADP free, MgADP, ATP free, MgATP, Cr,
+Pifree_cyt = 0.50872066859173026*1.0
+AMP_cyt = 0.00033459021041526427*1.0
+ADPfr_cyt = 0.0022536111580301241*1.0
+ATPfr_cyt = 0.039789862258604494*1.0
+Cr_cyt = 12.6772372798697*1.0
+H_cyt = 0.0001*1.0
+Mg_cyt = 0.8*1.0
+
+# time-dependent active fraction of target protein phosppholylated 
+# par baseCaL=1.0,deltaCaL=1.3,baseSC=0.1,deltaSC=0.9,baseNaK=0.1,deltaNaK=0.3
+
+baseCaL = 1.0*1.0
+deltaCaL = 1.3*1.0
+baseSC = 0.1*1.0
+deltaSC = 0.9*1.0
+baseNaK = 0.1*1.0
+deltaNaK = 0.3*1.0
+##### beta1-adrenergic receptor #####
+ARact = 0.0000132 - (ARS464 + ARS301)
+GsaGTPtot = GsaGTP + 0.0000497 * GsaGTP/(GsaGTP + 0.315)
+Gsfree = 0.00383 - GsaGTPtot - GsaGDP
+B2 = 1.0/(1.0 + 0.0000497 * 0.315/(GsaGTP + 0.315)/(GsaGTP + 0.315))
+AC_GaGTP = 0.0000497 * GsaGTP/(GsaGTP + 0.315)
+AC = 0.0000497 - AC_GaGTP
+Cat45 = Cat + 0.00018*Cat/(Cat + 0.0002)
+Cat123 = 2.0*0.001 - Cat45
+C_PKI = 0.00018 * Cat/(Cat + 0.0002)
+B10 = -0.008*Cat123*cAMP
+B11 =  0.008*Cat123*cAMP*cAMP*(2.0 + 2.0 * 0.009/Cat)
+B12 = 2.0*0.008*0.008*Cat123*cAMP*(2.0 + 2.0 * 0.009/Cat)
+B13 = 0.008^3 * Cat123
+B1 = 1.0/(1.0+(B10 + B11 + B12 + B13)/(cAMP*cAMP + 0.008*cAMP + 0.008^2))
+
+ARfree = ARact/(1.0 + Ligand/0.001 + Gsfree*Ligand/0.000062/0.001 + Gsfree/0.033)
+LAR = Ligand*ARfree/0.001
+LARGs = ARfree*Gsfree*Ligand/0.000062/0.001
+ARGs = ARfree*Gsfree/0.033
+beta = 20.0*0.009
+A2RC = Cat123/((0.008/cAMP)*(0.008/cAMP)+(0.008/cAMP)+1.0)
+ARC = A2RC*0.008/cAMP
+RC = ARC*0.008/cAMP
+alpha_PKA = 20.0*Cat
+beta_PKA = beta/((0.008/cAMP)*(0.008/cAMP)+(0.008/cAMP)+1.0)
+B0 = 1.0/(1.0 + 0.0002*180E-6/(0.0002+Cat)/(0.0002+Cat))
+kFcat = 0.0625*Cat
+kBpp = 1.0/40.0E+3 - kFcat
+afLCC = baseCaL + deltaCaL*y_PKA
+afSERCA = baseSC + deltaSC*y_PKA
+afNaK = baseNaK + deltaNaK*y_PKA
+	
+# Fast sodium current
+#PNa = 8.1072; // Himeno et al., BJ, 2015
+#PNa = 9.4584; // Umehara et al., IJMS, 2019
+#rPK_Ina = 0.15
+rate_INa = 1.0
+kkC2O=0.5/(0.0025*exp(-(vm-10.0)/8.0)+0.15*exp(-(vm-10.0)/100.0))
+kkOC=0.5/(30.0*exp((vm-10.0)/12.0)+0.53*exp((vm-10.0)/50.0))
+kkOI2=0.1/(0.0433*exp(-(vm-10.0)/27.0)+0.34*exp(-(vm-10.0)/2000.0))
+kkI2O=0.0001312
+kkC2I2=0.5/(1.0 + kkI2O*kkOC/kkOI2/kkC2O)
+kkI2C=0.5 - kkC2I2
+
+kkIsb=1.0/(150000.0*exp((vm-15.0)/10.0)+25000.0*exp((vm-15.0)/16.0))
+kkIsf=1.0/(0.008*exp(-(vm-15.0)/9.9)+4.0*exp(-(vm-15.0)/45.0))
+fC_Na = 1.0/(1.0+exp(-(vm+38.0)/7.0))
+
+C_TM = 1.0 - Is_TM - O_TM - I2_TM
+
+GHK_Na = vm*Faraday/R/TempK*(Nai-Nao*exp(-vm*Faraday/R/TempK))/(1.0-exp(-vm*Faraday/R/TempK))
+GHK_K  = vm/RTF*(Ki-Ko*exp(-vm/RTF))/(1.0-exp(-vm/RTF))
+INaT_Na = rate_INa*9.4584*GHK_Na*O_TM
+INaT_K  = rate_INa*9.4584*0.15*GHK_K*O_TM
+INaT = INaT_Na + INaT_K
+
+# Ultrarapid IKur (nS/pF).
+#GKur = 0.16*0.6*0.7-->G_Kur = 0.0672 nS by Umehara et al., IJMS,2019	
+par rate_Kur = 1.0
+ass = 1.0/(1.0+exp(-(vm+22.5)/7.7))
+iss = 1.0/(1.0+exp((vm+45.2)/5.7))
+tau_aur = 0.493*exp(-0.0629*vm) + 2.058
+tau_iur = 1200.0-170.0/(1.0+exp((vm+45.2)/5.7))
+Ek = RTF*log(Ko/Ki)
+IKur = rate_Kur*0.0672*a_Kur*i_Kur*(vm - Ek)
+
+# Transient outward current Ito Pandit et al.(mS/uF)
+par rate_Ito = 1.0
+# Ca independent transient outward K current,r-gate
+pr_inf	= 1.0/(1.0+exp(-(vm + 10.6)/11.42))
+tau_pr	= 1000.0/(45.16*exp(0.03577*(vm+50.0))+98.9*exp(-0.1*(vm+38.0)))
+# Ca independent transient outward K current, s-slow-gate: inactivation gate
+ss_inf = 1.0/(1.0+exp((vm+45.3)/6.8841))
+tau_ss = 1000.0*10.0*(3.7*exp(-(vm+70.0)*(vm+70.0)/30.0/30.0)+0.035)
+IKto = rate_Ito*0.19318*0.7*pr*s_slow*(vm-Ek)
+
+# L-type calcium current
+oPCaL = 14.21*0.42*1.5*1.0
+par scf_LCC = 1.0
+expF = exp(-vm/RTF2)
+fVmAct = 1.0/(3.734*exp(-vm/8.5) + 0.35*exp(-vm/3500.0))
+#if(fabs(vm) < 0.00001){
+#	Ca_loc_iz = (Cafree_z + 0.000913*Cao/0.065)/(1.0 + 0.000913/0.065)
+#	Ca_loc_blk = (Cafree_b + 0.000913*Cao/0.065)/(1.0 + 0.000913/0.065)
+#} else {
+	Ca_loc_iz = (Cafree_z + 0.000913/0.065*Cao*(vm/RTF2*expF)/(1.0 - expF))/(1.0 + 0.000913/0.065*vm/RTF2/(1.0 - expF))
+	Ca_loc_blk = (Cafree_b + 0.000913/0.065*Cao*(vm/RTF2*expF)/(1.0 - expF))/(1.0 + 0.000913/0.065*vm/RTF2/(1.0 - expF))
+#}
+kcooo_iz= fVmAct
+kooco_iz= 1.0 / (4.65*exp(vm/15.0) + 1.363*exp(vm/100.0))
+kccoc_iz= fVmAct
+koccc_iz= 1.0 / (4.65*exp(vm/15.0) + 1.363*exp(vm/100.0))
+kccco_iz= 1.0/(8084.0*exp(vm/10.0) + 158.0*exp(vm/1000.0)) + 1.0/(134736.0*exp(-vm/5.0) + 337.0*exp(-vm/2000.0))
+kcocc_iz = (Cafree_z/0.00154)*fVmAct/147.51
+kocoo_iz= 1.0/(8084.0*exp(vm/10.0) + 158.0*exp(vm/1000.0)) + 1.0/(134736.0*exp(-vm/5.0) + 337.0*exp(-vm/2000.0))
+koooc_iz = (Ca_loc_iz/0.00154)*fVmAct/147.51
+kcooo_blk= fVmAct
+kooco_blk= 1.0 / (4.65*exp(vm/15.0) + 1.363*exp(vm/100.0))
+kccoc_blk= fVmAct
+koccc_blk= 1.0 / (4.65*exp(vm/15.0) + 1.363*exp(vm/100.0))
+kccco_blk= 1.0/(8084.0*exp(vm/10.0) + 158.0*exp(vm/1000.0)) + 1.0/(134736.0*exp(-vm/5.0) + 337.0*exp(-vm/2000.0))
+kcocc_blk = (Cafree_b/0.00154)*fVmAct/147.51
+kocoo_blk= 1.0/(8084.0*exp(vm/10.0) + 158.0*exp(vm/1000.0)) + 1.0/(134736.0*exp(-vm/5.0) + 337.0*exp(-vm/2000.0))
+koooc_blk = (Ca_loc_blk/0.00154)*fVmAct/147.51
+
+Ycc_iz = 1.0 - (Yco_iz + Yoc_iz + Yoo_iz)
+product_iz = Yoo_iz*1.0/(1.0+((1.4/6.0)*(1.4/6.0)*(1.4/6.0)))
+tPCaL_iz = (8.9523*scf_LCC)*afLCC
+NaICaL_z = 0.0000185*tPCaL_iz
+KICaL_z  = 0.000367*tPCaL_iz
+GHK_Ca_iz  = 2.0*vm/RTF*(Cafree_z - Cao*exp(-2.0*vm/RTF))/(1.0 - exp(-2.0*vm/RTF))
+ICaLCa_iz = Frc_CaL_z*tPCaL_iz*GHK_Ca_iz*product_iz
+ICaLNa_iz = Frc_CaL_z*NaICaL_z*GHK_Na*product_iz
+ICaLK_iz  = Frc_CaL_z*KICaL_z*GHK_K*product_iz
+
+Ycc_blk = 1.0 - (Yco_blk + Yoc_blk + Yoo_blk)
+product_b = Yoo_blk*1.0/(1.0+((1.4/6.0)*(1.4/6.0)*(1.4/6.0)))
+tPCaL_b = (8.9523*scf_LCC)*afLCC
+NaICaL_b = 0.0000185*tPCaL_b
+KICaL_b  = 0.000367*tPCaL_b
+GHK_Ca_blk = 2.0*vm/RTF*(Cafree_b - Cao*exp(-2.0*vm/RTF))/(1.0 - exp(-2.0*vm/RTF))
+ICaLCa_blk = Frc_CaL_b*tPCaL_b*GHK_Ca_blk*product_b
+ICaLNa_blk = Frc_CaL_b*NaICaL_b*GHK_Na*product_b
+ICaLK_blk  = Frc_CaL_b*KICaL_b*GHK_K*product_b
+
+# Rapid delayed rectifier potassium current (Ikr) (mS/uF)
+par rate_Kr = 1.0
+ay1 = 1.0/(35.0*exp(-vm/10.5)+75.0*exp(-vm/100.0))
+by1 = 1.0/(470.0*exp(vm/8.3)+220.0*exp(vm/29.0))
+ay2 = 1.0/(350.0*exp(-vm/10.5)+300.0*exp(-vm/100.0))
+by2 = 1.0/(1850.0*exp(vm/8.3)+2200.0*exp(vm/29.0))
+ay3 = 1.0/(0.015*exp( vm/6.0)+7.0*exp(vm/60.0))
+by3 = 1.0/(0.114*exp(-vm/9.2)+2.3*exp(-vm/1000.0))
+pO = (0.6*y1+0.4*y2)*y3
+IKr = rate_Kr*0.27356*((Ko/4.5)^0.2)*pO*(vm - Ek)
+
+# Inward rectifier K current: Ik1 (mS/uF)
+par rate_K1=1.0
+##### Mg-block #####
+aMg = 12.0*exp(-0.025*(vm - Ek))
+bMg = 28.0*Mg_cyt*exp(0.025*(vm - Ek))
+fracO = aMg/(aMg+bMg)
+fracB = bMg/(aMg+bMg)
+poMg2 = 3.0*fracO*fracB*fracB
+poMg1 = 3.0*fracO*fracO*fracB
+po_Mggate = fracO*fracO*fracO
+##### spermin-block #####
+aSPM = 0.17*exp(-0.07*((vm - Ek)+8.0*Mg_cyt))/(1.0+0.01*exp(0.12*((vm - Ek)+8.0*Mg_cyt)))
+bSPM = 0.28*5.0*exp(0.15*((vm - Ek)+8.0*Mg_cyt))/(1.0+0.01*exp(0.13*((vm - Ek)+8.0*Mg_cyt)))
+##### IK1 amplitude #####
+pO_mode1 = 0.9*(1.0 - Pbspm)*(po_Mggate + 2/3*poMg1 + 1/3*poMg2)
+pO_mode2 = 0.1/(1.0 + 5.0/(40.0*exp(-(vm - Ek)/9.1)))
+pO_IK1 = (pO_mode1 + pO_mode2)
+IK1 = rate_K1*0.04546*0.7*((Ko/4.5)^0.4)/(1.0+exp(-(Ko-2.2)/0.6))*pO_IK1*(vm-Ek)
+
+# Cloride ion currnet I_Clh: Okamoto et al., JMCC, 2012,2014
+# Sodium-Calcium Exchanger (NCX)
+k1 = exp(0.32*vm/RTF)
+k2 = exp((0.32-1.0)*vm/RTF)
+E2Na = 1.0/(1.0+((87.5/Nao)^3.0)*(1.0+Cao/1.38))
+E2Ca = 1.0/(1.0+(1.38/Cao)*(1.0+((Nao/87.5)^3.0)))
+E1Na_jnc = 1.0/(1.0+((20.74854/Nai)^3.0)*(1.0+Cafree_j/0.0184))
+E1Ca_jnc = 1.0/(1.0+(0.0184/Cafree_j)*(1.0+((Nai/20.74854)^3.0)))
+fCaina = Cafree_j/(Cafree_j+0.004)
+alpha1_jnc=(E1Na_jnc*(fCaina*0.002+(1.0-fCaina)*0.0015))
+beta1_jnc=(fCaina*0.0012+(1.0-fCaina)*0.0000005)
+alpha2_jnc=(fCaina*0.00006+(1.0-fCaina)*0.02)
+beta2_jnc=(fCaina*0.18+(1.0-fCaina)*0.0002)
+alphaE_jnc = k2*E2Na + E2Ca
+betaE_jnc  = k1*E1Na_jnc + E1Ca_jnc
+E2NCX_jnc = 1.0 - E1NCX_jnc - I1NCX_jnc - I2NCX_jnc
+INCX_jnc = Frc_NCX_j*10.99*(k1*E1Na_jnc*E1NCX_jnc - k2*E2Na*E2NCX_jnc )
+INCXNa_jnc = 3.0*INCX_jnc
+INCXCa_jnc = -2.0*INCX_jnc
+#####
+E1Na_iz=1.0/(1.0+((20.74854/Nai)^3.0)*(1.0+Cafree_z/0.0184))
+E1Ca_iz=1.0/(1.0+(0.0184/Cafree_z)*(1.0+((Nai/20.74854)^3.0)))
+fCaina_iz=Cafree_z/(Cafree_z+0.004)
+alpha1_iz=(E1Na_iz*(fCaina_iz*0.002+(1.0-fCaina_iz)*0.0015))
+beta1_iz=(fCaina_iz*0.0012+(1.0-fCaina_iz)*0.0000005)
+alpha2_iz=(fCaina_iz*0.00006+(1.0-fCaina_iz)*0.02)
+beta2_iz=(fCaina_iz*0.18+(1.0-fCaina_iz)*0.0002)
+alphaE_iz=k2*E2Na + E2Ca
+betaE_iz=k1*E1Na_iz + E1Ca_iz
+E2NCX_iz=1.0 - E1NCX_iz - I1NCX_iz - I2NCX_iz
+INCX_iz=Frc_NCX_z*10.99*(k1*E1Na_iz*E1NCX_iz - k2*E2Na*E2NCX_iz )
+INCXNa_iz=3.0*INCX_iz
+INCXCa_iz=-2.0*INCX_iz
+#####
+E1Na_blk=1.0/(1.0+((20.74854/Nai)^3.0)*(1.0+Cafree_b/0.0184))
+E1Ca_blk=1.0/(1.0+(0.0184/Cafree_b)*(1.0+((Nai/20.74854)^3.0)))
+fCaina_blk= Cafree_b/(Cafree_b + 0.004)
+alpha1_blk=(E1Na_blk*(fCaina_blk*0.002+(1.0-fCaina_blk)*0.0015))
+beta1_blk=(fCaina_blk*0.0012+(1.0-fCaina_blk)*0.0000005)
+alpha2_blk=(fCaina_blk*0.00006+(1.0-fCaina_blk)*0.02)
+beta2_blk=(fCaina_blk*0.18+(1.0-fCaina_blk)*0.0002)
+alphaE_blk=k2*E2Na + E2Ca
+betaE_blk=k1*E1Na_blk + E1Ca_blk
+E2NCX_blk=1.0 - E1NCX_blk - I1NCX_blk - I2NCX_blk
+INCX_blk=Frc_NCX_b*10.99*(k1*E1Na_blk*E1NCX_blk - k2*E2Na*E2NCX_blk )
+INCXNa_blk=3.0*INCX_blk
+INCXCa_blk=-2.0*INCX_blk
+
+##### Na-K Pump #####
+par rate_NaK = 1.0
+##### modulation by the phosphlemman
+MgATP_cyt=6.631643709767415*1.0
+MgADP_cyt=0.025978226605534577*1.0
+Nai_c = Nai/(5.0*1.0*exp(-0.14*vm/RTF))
+Nae_c = Nao/(26.8*exp(0.44*vm/RTF))
+Ki_c  = Ki/(18.8*exp(-0.14*vm/RTF))
+Ke_c  = Ko/(0.8*(1.0^(-3/2))*exp(0.23*vm/RTF))
+##### transition rates in the forward direction #####
+a1p=(0.72*(Nai_c*Nai_c*Nai_c))/(((1.0 + Nai_c)*(1.0+Nai_c)*(1.0+Nai_c))+((1.0 + Ki_c)*(1.0 + Ki_c))-1.0)
+a2p=0.08*1.0
+a3p=4.0*(Ke_c*Ke_c)/(((1.0 + Nae_c)*(1.0 + Nae_c)*(1.0 + Nae_c)) + ((1.0 + Ke_c)*(1.0 + Ke_c)) - 1.0)
+a4p=0.3*MgATP_cyt/0.6/(1.0+MgATP_cyt/0.6)
+##### transition rates in the reverse direction
+a1m=0.08*MgADP_cyt
+a2m=0.008*(Nae_c*Nae_c*Nae_c)/(((1.0+Nae_c)*(1.0+Nae_c)*(1.0+Nae_c))+((1.0+Ke_c)*(1.0+Ke_c))-1.0)
+a3m=8000.0*Pifree_cyt*H_cyt/(1.0+MgATP_cyt/0.6)
+a4m=0.2*(Ki_c*Ki_c)/(((1.0+Nai_c)*(1.0+Nai_c)*(1.0+Nai_c))+((1.0+Ki_c)*(1.0+Ki_c))-1.0)
+denomi=(a1m+a1p)*a2m*a3m+a1p*a2p*(a3p+a3m)+a2p*a3p*(a4p+a4m)+(a2p+a2m)*a3m*a4m+(a1m+a1p)*a3p*a4p+a1m*(a3p+a3m)*a4m+a1p*(a2p+a2m)*a4p+a1m*a2m*(a4p+a4m)
+numer=a1p*a2p*a3p*a4p-a1m*a2m*a3m*a4m
+VcycleC = numer/denomi
+##### define the activated condition (Nai sensitivity is increased)
+Nai_a=Nai/(5.0*0.72*exp(-0.14*vm/RTF))
+Nae_a=Nao/(26.8*exp(0.44*vm/RTF))
+Ki_a=Ki/(18.8*exp(-0.14*vm/RTF))
+Ke_a=Ko/(0.8*(0.72^(-3/2))*exp(0.23*vm/RTF))
+##### transition rates in the forward direction
+aa1p=(0.72*(Nai_a*Nai_a*Nai_a))/(((1.0+Nai_a)*(1.0+Nai_a)*(1.0+Nai_a))+((1.0+Ki_a)*(1.0+Ki_a))-1.0)
+aa2p=0.08*1.0
+aa3p=4.0*(Ke_a*Ke_a)/(((1.0+Nae_a)*(1.0+Nae_a)*(1.0+Nae_a))+((1.0+Ke_a)*(1.0+Ke_a))-1.0)
+aa4p=0.3*MgATP_cyt/0.6/(1.0+MgATP_cyt/0.6)
+##### transition rates in the reverse direction
+aa1m=0.08*MgADP_cyt
+aa2m=0.008*(Nae_a*Nae_a*Nae_a)/(((1.0+Nae_a)*(1.0+Nae_a)*(1.0+Nae_a))+((1.0+Ke_a)*(1.0+Ke_a))-1.0)
+aa3m=8000.0*Pifree_cyt*H_cyt/(1.0+MgATP_cyt/0.6)
+aa4m=0.2*(Ki_a*Ki_a)/(((1.0+Nai_a)*(1.0+Nai_a)*(1.0+Nai_a))+((1.0+Ki_a)*(1.0+Ki_a))-1.0)
+a_denomi=(aa1m+aa1p)*aa2m*aa3m+aa1p*aa2p*(aa3p+aa3m)+aa2p*aa3p*(aa4p+aa4m)+(aa2p+aa2m)*aa3m*aa4m+(aa1m+aa1p)*aa3p*aa4p+aa1m*(aa3p+aa3m)*aa4m+aa1p*(aa2p+aa2m)*aa4p+aa1m*aa2m*(aa4p+aa4m)
+a_numer=aa1p*aa2p*aa3p*aa4p-aa1m*aa2m*aa3m*aa4m
+VcycleA=a_numer/a_denomi
+##### summation of control and activated Vcycle
+Vcyc=afNaK*VcycleA+(1.0-afNaK)*VcycleC
+INaK=36.382*Vcyc*rate_NaK
+INaK_Na=3.0*INaK
+INaK_K=-2.0*INaK
+##### Sarcolemmal Ca Pump,iz (Ca-ATPase) ########
+IPMCA_iz=Frc_iz*0.19*(Cafree_z^1.6)/((0.0005^1.6)+(Cafree_z^1.6))
+IPMCA_blk=Frc_blk*0.19*(Cafree_b^1.6)/((0.0005^1.6)+(Cafree_b^1.6))
+##### K Background Current #####
+#par rate_kbg = 1.0
+IKbg = rate_kbg*0.025883*(vm - Ek)
+##### Na Background Current #####
+Ena = RTF*log(Nao/Nai)
+INabg = 0.0037206*(vm-Ena)
+##### Ca Background Current (blk,iz)
+ECa_blk = RTF2*log(Cao/Cafree_b)
+ECa_iz  = RTF2*log(Cao/Cafree_z)
+ICabg_blk=Frc_blk*0.00014028*(vm-ECa_blk)
+ICabg_iz=Frc_iz*0.00014028*(vm-ECa_iz)
+##### calcium uptake via SERCA pump (Jup) #####
+### non-activated fraction of SERCA
+a1_pc=25900.0*MgATP_cyt
+a2_pc=2540.0*(Cafree_b/0.91)*(Cafree_b/0.91)/((Cafree_b/0.91)*(Cafree_b/0.91)*(1.0+1E-8/3.54E-3)+1E-8/3.54E-3*(1.0+1E-4/1.09E-5))
+a3_pc=20.5*1E-8/1.05E-8/((1E-4/7.24E-5)*(1.0+(Ca_SRup/2.24)*(Ca_SRup/2.24))+(1E-8/1.05E-8*(1.0+1E-4/7.24E-5)))
+a1_mc=2.0*1E-8/3.54E-3/((Cafree_b/0.91)*(Cafree_b/0.91)*(1.0+1E-8/3.54E-3)+1E-8/3.54E-3*(1.0+1E-4/1.09E-5))
+a2_mc=67200.0*MgADP_cyt*(Ca_SRup/2.24)*(Ca_SRup/2.24)*1E-8/1.05E-8/((1E-4/7.24E-5)*(1.0+(Ca_SRup/2.24)*(Ca_SRup/2.24))+(1E-8/1.05E-8*(1.0 + 1E-4/7.24E-5)))
+a3_mc=149.0*Pifree_cyt
+denomi_c=a2_pc*a3_pc+a1_mc*a3_pc+a1_mc*a2_mc+a1_pc*a3_pc+a2_mc*a1_pc+a2_mc*a3_mc+a1_pc*a2_pc+a3_mc*a1_mc+a3_mc*a2_pc
+numer_c=a1_pc*a2_pc*a3_pc-a1_mc*a2_mc*a3_mc
+Vcycle_c=numer_c/denomi_c
+#JSERCA_control=((1.0-afSERCA)*1341.204*Sc*Vcycle_c)/(2.0*Faraday)*freezeSR
+JSERCA_c=((1.0-afSERCA)*1341.204*Sc*Vcycle_c)/(2.0*Faraday)
+### activated fraction of SERCA
+a1_pa=25900.0*MgATP_cyt
+a2_pa=2540.0*((Cafree_b/0.455)^2)/(((Cafree_b/0.455)^2)*(1.0+1E-8/3.54E-3)+1E-8/3.54E-3*(1.0+1E-4/1.09E-5))
+a3_pa=20.5*1E-8/1.05E-8/((1E-4/7.24E-5)*(1.0+(((Ca_SRup/2.24)^2)))+(1E-8/1.05E-8*(1.0+1E-4/7.24E-5)))
+a1_ma=(2.0/0.5/0.5)*1E-8/3.54E-3/(((Cafree_b/0.455)^2)*(1.0+1E-8/3.54E-3)+1E-8/3.54E-3*(1.0+1E-4/1.09E-5))
+a2_ma=67200.0*MgADP_cyt*((Ca_SRup/2.24)^2)*1E-8/1.05E-8/((1E-4/7.24E-5)*(1.0+(((Ca_SRup/2.24)^2)))+(1E-8/1.05E-8*(1.0+1E-4/7.24E-5)))
+a3_ma=149.0*Pifree_cyt
+denomi_a=a2_pa*a3_pa+a1_ma*a3_pa+a1_ma*a2_ma+a1_pa*a3_pa+a2_ma*a1_pa+a2_ma*a3_ma+a1_pa*a2_pa+a3_ma*a1_ma+a3_ma*a2_pa
+numer_a=a1_pa*a2_pa*a3_pa-a1_ma*a2_ma*a3_ma
+Vcycle_a=numer_a/denomi_a
+JSERCA_a=(afSERCA*1341.204*Sc*Vcycle_a)/(2.0*Faraday)
+### summation of control and activated fractions
+JSERCA=JSERCA_c+JSERCA_a
+##### Translocation of Ca Ions from NSR to JSR #####
+Ptrans = 4.8037*Sc
+Jtrans_SR=Ptrans*(Ca_SRup-Cafree_r)
+##### Calsium Release Units (CaRU): SR Ca release #####
+PRyR = 4177.369*Sc
+# SR calcium release flux, via RyR (Jrel)
+#fVmAct=1.0/(3.734*exp(-vm/8.5)+0.35*exp(-vm/3500.0))
+fVmInAct=1.0/(4.65*exp(vm/15.0)+1.363*exp(vm/100.0))
+mEtan12=1.0/(8084.0*exp(vm/10.0)+158.0*exp(vm/1000.0))+1.0/(134736.0*exp(-vm/5.0)+337.0*exp(-vm/2000.0))
+po_LCC=Yooo+Yooc
+po_RyR=Yooo+Ycoo+Ycco+Yoco
+Ca_ndLR=(Cafree_j+Cafree_r*0.02/0.065+expF*Cao*0.000913/0.065*(vm/RTF2)/(1.0-expF))/(1.0+0.02/0.065+0.000913/0.065*vm/RTF2/(1.0-expF))
+Ca_nd0R=(Cafree_j+Cafree_r*0.02/0.065)/(1.0+0.02/0.065)
+Ca_ndL0=(Cafree_j+expF*Cao*0.000913/0.065*(vm/RTF2)/(1.0-expF))/(1.0+0.000913/0.065*vm/RTF2/(1.0-expF))
+### Ca_nd without R and L open
+Ca_nd00 = Cafree_j
+Ca_Noise = Ca_nd00
+kco=3.0*0.4/(1.0+((0.025/Ca_ndL0)^2.7))
+koc=3.0*0.5564
+ft=kco/(kco + koc)
+Akco=3.0*0.4*(0.1+Cafree_r)/(1.0+((0.025/Ca_ndLR)^2.7))
+kRco1=7.0*(ft*Akco)
+kco_rest=3.0*0.4/(1.0+((0.025/Ca_nd00)^2.7))
+ft_rest=kco_rest/(kco_rest+koc)
+pC1=koc/(ft_rest*Akco+koc)
+kRoc1=koc*(pC1^(9.0*0.74))
+kYoooYooc = kRoc1
+kYoocYooo = kRco1
+### Case of LCC is closed ###
+kco2=3.0* 0.4/(1.0+((0.025/Ca_Noise)^2.7))
+ft2=kco2/(kco2+koc)
+Akco2=3.0*0.4*(0.1+Cafree_r)/(1.0+((0.025/Ca_nd0R)^2.7))
+kRco2=7.0*(ft2*Akco2)
+kco_rest2=3.0*0.4/(1.0+((0.025/Ca_nd00)^2.7))
+ft_rest2=kco_rest2/(kco_rest2+koc)
+pC2=koc/(ft_rest2*Akco2+koc)
+kRoc2=koc*(pC2^(9.0*0.74))
+kYcooYcoc = kRoc2
+kYcocYcoo = kRco2
+kYccoYccc = kRoc2
+kYcccYcco = kRco2
+kYocoYocc = kRoc2
+kYoccYoco = kRco2
+kYcooYooo = fVmAct
+kYoooYcoo = fVmInAct
+kYcocYooc = fVmAct
+kYoocYcoc = fVmInAct
+kYccoYoco = fVmAct
+kYocoYcco = fVmInAct
+kYcccYocc = fVmAct
+kYoccYccc = fVmInAct
+kYoooYoco = (Ca_ndLR/0.00154)*fVmAct/147.51
+kYocoYooo = mEtan12
+kYoocYocc = (Ca_ndL0/0.00154)*fVmAct/147.51
+kYoccYooc = mEtan12
+kYcooYcco = (Ca_nd0R/0.00154)*fVmAct/147.51
+kYccoYcoo = mEtan12
+kYcocYccc = (Ca_nd00/0.00154)*fVmAct/147.51
+kYcccYcoc = mEtan12
+GHK_Ca_LR = 2.0*vm/RTF*(Ca_ndLR - Cao*exp(-2.0*vm/RTF))/(1.0 - exp(-2.0*vm/RTF))
+GHK_Ca_L0 = 2.0*vm/RTF*(Ca_ndL0 - Cao*exp(-2.0*vm/RTF))/(1.0 - exp(-2.0*vm/RTF))
+### afLCC2 = 1.0 + 1.3*y_PKA;
+tPCaL2=(oPCaL*scf_LCC)*afLCC
+ICaLCa_LR=Frc_CaL_j*tPCaL2*GHK_Ca_LR*Yooo*1.0/(1.0+((1.4/6.0)*(1.4/6.0)*(1.4/6.0)))
+ICaLCa_L0=Frc_CaL_j*tPCaL2*GHK_Ca_L0*Yooc*1.0/(1.0+((1.4/6.0)*(1.4/6.0)*(1.4/6.0)))
+ICaLNa_jnc=Frc_CaL_j*0.0000185*tPCaL2*GHK_Na*po_LCC*1.0/(1.0+((1.4/6.0)*(1.4/6.0)*(1.4/6.0)))
+ICaLK_jnc=Frc_CaL_j*0.000367*tPCaL2*GHK_K*po_LCC*1.0/(1.0+((1.4/6.0)*(1.4/6.0)*(1.4/6.0)))
+pot_RyR=(1.0-0.00006)*po_RyR+0.00006
+Jrel_SR=PRyR*pot_RyR*(Cafree_r-Cafree_j)
+Jleak_SR=PRyR*0.00006*(Cafree_r-Cafree_z)
+##### Myoplasmic Calcium Buffers #####
+GCa_jnciz = 3395.88*Sc
+GCa_izblk = 3507.78*Sc
+#### CaM Buffer ####
+f1=0.013*1.1095/(Cafree_j+0.013)/(Cafree_j+0.013)
+f2=0.0003*0.398/(Cafree_j+0.0003)/(Cafree_j+0.0003)
+Buf_jnc=1.0/(1.0+f1+f2)
+f3=0.013*0.6078/(Cafree_z+0.013)/(Cafree_z+0.013)
+f4=0.0003*0.2178/(Cafree_z+0.0003)/(Cafree_z+0.0003)
+Buf_iz=1.0/(1.0+f3+f4)
+#### Trpn Buffer ####
+f5=0.024*0.007/(Cafree_b+0.007)/(Cafree_b+0.007)
+f6=0.12*(0.000032/2.37)/(Cafree_b+0.000032/2.37)/(Cafree_b+0.000032/2.37)
+f7=0.0171*0.0006/(Cafree_b+0.0006)/(Cafree_b+0.0006)
+Buf_blk=1.0/(1.0+f5+f6+f7)
+#### Csqn Buffer ####
+f8=0.65*3.0/(Cafree_r+0.65)/(Cafree_r+0.65)
+Buf_SRrl=1.0/(1.0+f8)
+#### bund dif ####
+JCa_jnciz=GCa_jnciz*(Cafree_j-Cafree_z)
+JCa_izblk=GCa_izblk*(Cafree_z-Cafree_b)
+#### IP3 Receptor
+par Pip3_wc = 80.0
+#par conIP3 = 0.015
+# scfmaxP_IP3R
+k_1a = 0.64 * 0.001
+k_1b = 0.04 * 0.001
+k_2a = 37.4 * 0.001
+k_2b = 1.4 * 0.001
+k_3a = 0.11 * 0.001
+k_3b = 29.8 * 0.001
+k_4a = 4 * 0.001
+k_4b = 0.54 * 0.001
+l_2a = 1.7 * 0.001
+l_2b = 0.8 * 0.001
+l_4a = 1.7 * 0.001
+l_4b = 2.5 * 0.001
+l_6a = 4707.0 * 0.001
+l_6b = 11.4 * 0.001
+uMCa = 1E+3*Cafree_j
+phi_1 = (k_1a*0.12+l_2a)*uMCa/(0.12+uMCa*(1.0+0.12/0.025))
+phi_2 = (k_2a*0.025+l_4a*uMCa)/(0.025+uMCa*(1.0+0.025/0.12))
+phi_2b = (k_2b+l_4b*uMCa)/(1.0+uMCa/54.7)
+phi_3 = k_3a*54.7/(uMCa+54.7)
+phi_4 = (k_4a*54.7+l_6a)*uMCa/(uMCa+54.7)
+phi_4b = 0.12*(k_4b+l_6b)/(uMCa+0.12)
+phi_5 = (k_1a*0.12+l_2a)*uMCa/(uMCa+0.12)
+# pO_IP3R = pow((0.1*O_ip3+0.9*A_ip3),4.0)
+J_ip3R = Pip3_wc*((0.1*O_ip3+0.9*A_ip3)^4.0)*(Cafree_r-Cafree_j)
+
+ICaL = ICaLCa_LR + ICaLCa_L0 + ICaLNa_jnc + ICaLK_jnc + ICaLCa_iz + ICaLNa_iz + ICaLK_iz + ICaLCa_blk + ICaLNa_blk + ICaLK_blk
+ICaL_jnc = ICaLCa_LR + ICaLCa_L0 + ICaLNa_jnc + ICaLK_jnc
+ICaL_iz = ICaLCa_iz + ICaLNa_iz + ICaLK_iz
+ICaL_blk = ICaLCa_blk + ICaLNa_blk + ICaLK_blk
+ICabg_blkiz = ICabg_blk + ICabg_iz
+totINCX = INCXNa_iz + INCXCa_iz + INCXNa_blk + INCXCa_blk + INCXNa_jnc + INCXCa_jnc
+totIPMCA = IPMCA_iz + IPMCA_blk
+
+ItotCa_j = ICaLCa_LR + ICaLCa_L0 - 2.0*INCX_jnc
+ItotCa_z  = ICaLCa_iz + ICabg_iz - 2.0*INCX_iz + IPMCA_iz
+ItotCa_b = ICaLCa_blk + ICabg_blk - 2.0*INCX_blk + IPMCA_blk
+Itotal_Ca = ItotCa_j + ItotCa_z + ItotCa_b
+
+Itotal_Na = INaT_Na + (ICaLNa_jnc + ICaLNa_iz + ICaLNa_blk) + INabg + 3.0*INaK + 3.0*(INCX_jnc + INCX_iz + INCX_blk)
+Itotal_K  = INaT_K + IK1 + IKto + IKur + IKr + IKbg + (ICaLK_jnc + ICaLK_iz + ICaLK_blk) - 2.0*INaK
+
+#aux Itot_jnc = ItotCa_j
+#aux Ical_lr = ICaLCa_LR
+#aux Ical_0 = ICaLCa_L0
+#aux Incx_j = INCX_jnc
+aux itotna= Itotal_Na
+aux itotk = Itotal_K
+aux itotca=Itotal_Ca
+
+vm' = -(Itotal_Ca + Itotal_Na + Itotal_K + Istim)
+O_TM' = I2_TM*kkI2O + fC_Na*C_TM*kkC2O - O_TM*(kkOC + kkOI2)
+I2_TM' = fC_Na*C_TM*kkC2I2 + O_TM*kkOI2 + Is_TM*kkIsb - I2_TM*(kkI2C+kkI2O+kkIsf)
+Is_TM' = I2_TM*kkIsf + C_TM*kkIsf - Is_TM*2.0*kkIsb
+a_Kur'=(ass - a_Kur)/tau_aur
+i_Kur'=(iss - i_Kur)/tau_iur
+pr' = (pr_inf - pr)/tau_pr
+s_slow' = (ss_inf - s_slow)/tau_ss
+Yco_iz' = kccco_iz*Ycc_iz + kooco_iz*Yoo_iz - (kcocc_iz + kcooo_iz)*Yco_iz
+Yoc_iz' = koooc_iz*Yoo_iz + kccoc_iz*Ycc_iz - (kocoo_iz + koccc_iz)*Yoc_iz
+Yoo_iz' = kcooo_iz*Yco_iz + kocoo_iz*Yoc_iz - (kooco_iz + koooc_iz)*Yoo_iz
+Yco_blk' = kccco_blk*Ycc_blk + kooco_blk*Yoo_blk - (kcocc_blk + kcooo_blk)*Yco_blk
+Yoc_blk' = koooc_blk*Yoo_blk + kccoc_blk*Ycc_blk - (kocoo_blk + koccc_blk)*Yoc_blk
+Yoo_blk' = kcooo_blk*Yco_blk + kocoo_blk*Yoc_blk - (kooco_blk + koooc_blk)*Yoo_blk
+y1' = ay1*(1.0 - y1) - by1*y1
+y2' = ay2*(1.0 - y2) - by2*y2
+y3' = ay3*(1.0 - y3) - by3*y3
+Pbspm' = bSPM*po_Mggate*(1.0 - Pbspm) - aSPM*Pbspm
+E1NCX_jnc'= E2NCX_jnc*alphaE_jnc + I1NCX_jnc*beta1_jnc + I2NCX_jnc*beta2_jnc - E1NCX_jnc*(betaE_jnc + alpha1_jnc + alpha2_jnc)
+I1NCX_jnc'= E1NCX_jnc*alpha1_jnc - I1NCX_jnc*beta1_jnc
+I2NCX_jnc'= E1NCX_jnc*alpha2_jnc - I2NCX_jnc*beta2_jnc
+E1NCX_iz'= E2NCX_iz*alphaE_iz + I1NCX_iz*beta1_iz + I2NCX_iz*beta2_iz - E1NCX_iz*(betaE_iz + alpha1_iz + alpha2_iz)
+I1NCX_iz'= E1NCX_iz*alpha1_iz - I1NCX_iz*beta1_iz
+I2NCX_iz'= E1NCX_iz*alpha2_iz - I2NCX_iz*beta2_iz
+E1NCX_blk'= E2NCX_blk*alphaE_blk + I1NCX_blk*beta1_blk + I2NCX_blk*beta2_blk - E1NCX_blk*(betaE_blk + alpha1_blk + alpha2_blk)
+I1NCX_blk'= E1NCX_blk*alpha1_blk - I1NCX_blk*beta1_blk
+I2NCX_blk'= E1NCX_blk*alpha2_blk - I2NCX_blk*beta2_blk
+Yooo'= kYoocYooo*Yooc + kYcooYooo*Ycoo + kYocoYooo*Yoco - (kYoooYooc + kYoooYcoo + kYoooYoco)*Yooo
+Yooc'= kYcocYooc*Ycoc + kYoooYooc*Yooo + kYoccYooc*Yocc - (kYoocYcoc + kYoocYooo + kYoocYocc)*Yooc
+Ycoo'= kYcocYcoo*Ycoc + kYoooYcoo*Yooo + kYccoYcoo*Ycco - (kYcooYcoc + kYcooYooo + kYcooYcco)*Ycoo
+Ycoc'= kYcooYcoc*Ycoo + kYoocYcoc*Yooc + kYcccYcoc*(1.0-(Yooo+Yooc+Ycoo+Ycoc+Ycco+Yoco+Yocc)) - (kYcocYcoo + kYcocYooc + kYcocYccc)*Ycoc
+Ycco'= kYcccYcco*(1.0-(Yooo+Yooc+Ycoo+Ycoc+Ycco+Yoco+Yocc)) + kYocoYcco*Yoco + kYcooYcco*Ycoo - (kYccoYccc + kYccoYoco + kYccoYcoo)*Ycco
+Yoco'= kYoccYoco*Yocc + kYccoYoco*Ycco + kYoooYoco*Yooo - (kYocoYocc + kYocoYcco + kYocoYooo)*Yoco
+Yocc'= kYcccYocc*(1.0-(Yooo+Yooc+Ycoo+Ycoc+Ycco+Yoco+Yocc)) + kYocoYocc*Yoco + kYoocYocc*Yooc - (kYoccYccc + kYoccYoco + kYoccYooc)*Yocc
+R_ip3'= phi_2b*O_ip3+(k_1b+l_2b)*I_1_ip3 - (phi_2*conIP3 + phi_1)*R_ip3
+O_ip3'= phi_2*conIP3*R_ip3 + phi_4b*A_ip3 + k_3b*(1.0-R_ip3-O_ip3-I_1_ip3-I_2_ip3-A_ip3) - (phi_2b + phi_4 + phi_3)*O_ip3
+I_1_ip3'= phi_1*R_ip3 - (k_1b + l_2b)*I_1_ip3
+I_2_ip3'= phi_5*A_ip3 - (k_1b + l_2b)*I_2_ip3
+A_ip3'= phi_4*O_ip3 + (k_1b + l_2b)*I_2_ip3 - (phi_4b + phi_5)*A_ip3
+Cafree_j'= Buf_jnc*((-ItotCa_j*Cm/(2.0*Faraday) + Jrel_SR - JCa_jnciz + J_ip3R)/Vjnc)
+Cafree_z'= Buf_iz*((-ItotCa_z*Cm/(2.0*Faraday) + JCa_jnciz - JCa_izblk)/Viz)
+Cafree_b' = Buf_blk*((-ItotCa_b*Cm/(2.0*Faraday) - JSERCA + JCa_izblk) / Vblk)
+Ca_SRup'= (JSERCA - Jtrans_SR) / Vsr_up
+Cafree_r'= Buf_SRrl*((Jtrans_SR - Jrel_SR - J_ip3R) / Vsr_rl)
+Nai'= -Itotal_Na*Cm/Faraday/Vcyt
+Ki'= -(Itotal_K + Istim)*Cm/Faraday/Vcyt
+ARS464'= 0.0000011*(LAR+LARGs)-0.0000022*2.0*ARS464
+ARS301'= 0.0036*Cat*(0.0000132-ARS464-ARS301)-0.0000002232*20.0*ARS301
+GsaGTP'= B2*(0.016*(ARGs+LARGs)-0.001*(GsaGTP+0.0000497*GsaGTP/(GsaGTP+0.315)))
+Gsbg'= 0.016*(ARGs+LARGs)-1200.0*Gsbg*GsaGDP
+GsaGDP'= 0.001*(GsaGTP+0.0000497*GsaGTP/(GsaGTP+0.315))-1200.0*Gsbg*GsaGDP
+cAMP'= B1*(0.0001307*AC*6.0/(1.03+6.0) + 3.4*AC_GaGTP*6.0/(0.315+6.0) - 0.005*0.000039*cAMP/(0.0013 + cAMP))
+Cat'= B0*(beta_PKA*(2.0*0.001) - (alpha_PKA + beta_PKA)*(Cat + 0.00018*Cat/(Cat + 0.0002)))
+y_PKA'= kFcat*(1.0 - y_PKA) - kBpp*y_PKA
+
+@ colormap=5
+@ total=1000, dt=0.01 
+@ xlo=0, xhi=1000, ylo=-80, yhi=40
+@ xp=t, yp=vm 
+@ maxstor=2000000, bounds=10000000
+@ meth=runge-kutta
+# AUTO options
+@ ds=0.001,dsmin=1e-6,dsmax=2,EPSL=0.00001
+@ parmin=-1 parmax=2
+@ Ntst=200, Nmax=2000, NPr=5000, EPSL=1 NormMin=0, NormMax=10000000
+@ autoymax=40,autoymin=-90,autoxmin=-0.1,autoxmax=1.1
+@ dfgrid=16,ncdraw=1,dfdraw=2
+# @ Newt_tol=0.0001, Newt_iter=10000, Jac_eps=0.00001
+
+done
