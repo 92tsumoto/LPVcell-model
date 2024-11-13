@@ -1,0 +1,1492 @@
+make  all-am
+make[1]: ディレクトリ '/home/tsumoto/work/PVcell2024_ver1.0.3' に入ります
+icx -DHAVE_CONFIG_H -I.    -fcommon -fiopenmp -fopenmp-targets=spir64 -flto -Wall -O3 -xCORE-AVX2 -qopt-zmm-usage=high -qmkl=parallel -Winline -ipo -pg -qopt-report-stdout -parallel-source-info=2 -O2 -MT ./src/pvc2024-UHNpvc.o -MD -MP -MF ./src/.deps/pvc2024-UHNpvc.Tpo -c -o ./src/pvc2024-UHNpvc.o `test -f './src/UHNpvc.c' || echo './'`./src/UHNpvc.c
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+---- End Inlining Report ------
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+COMPILE FUNC: main
+   -> llvm.fabs.f64 /tmp/icx-da793b0c63/UHNpvc-ea79c8.bc
+
+---- End Inlining Report ------
+mv -f ./src/.deps/pvc2024-UHNpvc.Tpo ./src/.deps/pvc2024-UHNpvc.Po
+icx -DHAVE_CONFIG_H -I.    -fcommon -fiopenmp -fopenmp-targets=spir64 -flto -Wall -O3 -xCORE-AVX2 -qopt-zmm-usage=high -qmkl=parallel -Winline -ipo -pg -qopt-report-stdout -parallel-source-info=2 -O2 -MT ./src/pvc2024-exptable.o -MD -MP -MF ./src/.deps/pvc2024-exptable.Tpo -c -o ./src/pvc2024-exptable.o `test -f './src/exptable.c' || echo './'`./src/exptable.c
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+---- End Inlining Report ------
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+COMPILE FUNC: make_ExpTable
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+   -> llvm.exp.f64 /tmp/icx-59e8a8346d/exptable-736215.bc
+
+---- End Inlining Report ------
+mv -f ./src/.deps/pvc2024-exptable.Tpo ./src/.deps/pvc2024-exptable.Po
+icx -DHAVE_CONFIG_H -I.    -fcommon -fiopenmp -fopenmp-targets=spir64 -flto -Wall -O3 -xCORE-AVX2 -qopt-zmm-usage=high -qmkl=parallel -Winline -ipo -pg -qopt-report-stdout -parallel-source-info=2 -O2 -MT ./src/pvc2024-mem.o -MD -MP -MF ./src/.deps/pvc2024-mem.Tpo -c -o ./src/pvc2024-mem.o `test -f './src/mem.c' || echo './'`./src/mem.c
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+---- End Inlining Report ------
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+COMPILE FUNC: initial_mem
+
+COMPILE FUNC: closed_mem
+
+COMPILE FUNC: malloc2d
+
+COMPILE FUNC: malloc3d
+
+---- End Inlining Report ------
+mv -f ./src/.deps/pvc2024-mem.Tpo ./src/.deps/pvc2024-mem.Po
+icx -DHAVE_CONFIG_H -I.    -fcommon -fiopenmp -fopenmp-targets=spir64 -flto -Wall -O3 -xCORE-AVX2 -qopt-zmm-usage=high -qmkl=parallel -Winline -ipo -pg -qopt-report-stdout -parallel-source-info=2 -O2 -MT ./src/pvc2024-val_constants.o -MD -MP -MF ./src/.deps/pvc2024-val_constants.Tpo -c -o ./src/pvc2024-val_constants.o `test -f './src/val_constants.c' || echo './'`./src/val_constants.c
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+---- End Inlining Report ------
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+DEAD STATIC FUNC: llvm.exp.f64
+
+DEAD STATIC FUNC: llvm.pow.f64
+
+DEAD STATIC FUNC: llvm.powi.f64.i32
+
+COMPILE FUNC: val_consts
+   -> DELETE: llvm.pow.f64 /tmp/icx-efd18257bb/val_constants-9411c8.bc
+   -> DELETE: llvm.pow.f64 /tmp/icx-efd18257bb/val_constants-9411c8.bc
+   -> DELETE: llvm.exp.f64 /tmp/icx-efd18257bb/val_constants-9411c8.bc
+   -> DELETE: llvm.powi.f64.i32 /tmp/icx-efd18257bb/val_constants-9411c8.bc
+   -> DELETE: llvm.powi.f64.i32 /tmp/icx-efd18257bb/val_constants-9411c8.bc
+
+---- End Inlining Report ------
+mv -f ./src/.deps/pvc2024-val_constants.Tpo ./src/.deps/pvc2024-val_constants.Po
+icx -DHAVE_CONFIG_H -I.    -fcommon -fiopenmp -fopenmp-targets=spir64 -flto -Wall -O3 -xCORE-AVX2 -qopt-zmm-usage=high -qmkl=parallel -Winline -ipo -pg -qopt-report-stdout -parallel-source-info=2 -O2 -MT ./src/pvc2024-system.o -MD -MP -MF ./src/.deps/pvc2024-system.Tpo -c -o ./src/pvc2024-system.o `test -f './src/system.c' || echo './'`./src/system.c
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+---- End Inlining Report ------
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+COMPILE FUNC: function
+   -> llvm.memset.p0.i64 /tmp/icx-bb0ec28a88/system-328b5d.bc
+
+---- End Inlining Report ------
+mv -f ./src/.deps/pvc2024-system.Tpo ./src/.deps/pvc2024-system.Po
+icx -DHAVE_CONFIG_H -I.    -fcommon -fiopenmp -fopenmp-targets=spir64 -flto -Wall -O3 -xCORE-AVX2 -qopt-zmm-usage=high -qmkl=parallel -Winline -ipo -pg -qopt-report-stdout -parallel-source-info=2 -O2 -MT ./src/pvc2024-currents.o -MD -MP -MF ./src/.deps/pvc2024-currents.Tpo -c -o ./src/pvc2024-currents.o `test -f './src/currents.c' || echo './'`./src/currents.c
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+---- End Inlining Report ------
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+COMPILE FUNC: comp_potential
+   -> llvm.log.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.log.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.log.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.log.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.log.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> DELETE: llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> DELETE: llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> DELETE: llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> DELETE: llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+
+COMPILE FUNC: comp_ina
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+
+COMPILE FUNC: comp_ikur
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+
+COMPILE FUNC: comp_ito
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+
+COMPILE FUNC: comp_ical
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> DELETE: llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> DELETE: llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> DELETE: llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> DELETE: llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> DELETE: llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> DELETE: llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+
+COMPILE FUNC: comp_ikr
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+
+COMPILE FUNC: comp_ik1
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+
+COMPILE FUNC: comp_iclh
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+
+COMPILE FUNC: comp_INCX
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.powi.f64.i32 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.powi.f64.i32 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> DELETE: llvm.powi.f64.i32 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> DELETE: llvm.powi.f64.i32 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> DELETE: llvm.powi.f64.i32 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> DELETE: llvm.powi.f64.i32 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+
+COMPILE FUNC: comp_inak
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+
+COMPILE FUNC: comp_ipmca
+   -> llvm.pow.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.pow.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.pow.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> DELETE: llvm.pow.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+
+COMPILE FUNC: comp_ikb
+
+COMPILE FUNC: comp_inab
+
+COMPILE FUNC: comp_icab
+
+COMPILE FUNC: comp_jup
+
+COMPILE FUNC: comp_jtr
+
+COMPILE FUNC: comp_CaRU
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.exp.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.pow.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.pow.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.pow.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.pow.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> DELETE: llvm.pow.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.pow.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+   -> llvm.pow.f64 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+
+COMPILE FUNC: comp_Ca_buff_jnc
+
+COMPILE FUNC: comp_Ca_buff_iz
+
+COMPILE FUNC: comp_Ca_buff_blk
+
+COMPILE FUNC: comp_buffSR_rl
+
+COMPILE FUNC: comp_bund_dif
+
+COMPILE FUNC: comp_IP3R
+   -> llvm.powi.f64.i32 /tmp/icx-6ca8d7526e/currents-096cd2.bc
+
+COMPILE FUNC: comp_aAR_kinetics
+
+COMPILE FUNC: comp_bAR_kinetics
+
+---- End Inlining Report ------
+mv -f ./src/.deps/pvc2024-currents.Tpo ./src/.deps/pvc2024-currents.Po
+icx -DHAVE_CONFIG_H -I.    -fcommon -fiopenmp -fopenmp-targets=spir64 -flto -Wall -O3 -xCORE-AVX2 -qopt-zmm-usage=high -qmkl=parallel -Winline -ipo -pg -qopt-report-stdout -parallel-source-info=2 -O2 -MT ./src/pvc2024-eular.o -MD -MP -MF ./src/.deps/pvc2024-eular.Tpo -c -o ./src/pvc2024-eular.o `test -f './src/eular.c' || echo './'`./src/eular.c
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+---- End Inlining Report ------
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+COMPILE FUNC: eular
+
+---- End Inlining Report ------
+mv -f ./src/.deps/pvc2024-eular.Tpo ./src/.deps/pvc2024-eular.Po
+icx -DHAVE_CONFIG_H -I.    -fcommon -fiopenmp -fopenmp-targets=spir64 -flto -Wall -O3 -xCORE-AVX2 -qopt-zmm-usage=high -qmkl=parallel -Winline -ipo -pg -qopt-report-stdout -parallel-source-info=2 -O2 -MT ./src/pvc2024-runge.o -MD -MP -MF ./src/.deps/pvc2024-runge.Tpo -c -o ./src/pvc2024-runge.o `test -f './src/runge.c' || echo './'`./src/runge.c
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+---- End Inlining Report ------
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+COMPILE FUNC: runge
+
+---- End Inlining Report ------
+mv -f ./src/.deps/pvc2024-runge.Tpo ./src/.deps/pvc2024-runge.Po
+icx -DHAVE_CONFIG_H -I.    -fcommon -fiopenmp -fopenmp-targets=spir64 -flto -Wall -O3 -xCORE-AVX2 -qopt-zmm-usage=high -qmkl=parallel -Winline -ipo -pg -qopt-report-stdout -parallel-source-info=2 -O2 -MT ./src/pvc2024-win_out.o -MD -MP -MF ./src/.deps/pvc2024-win_out.Tpo -c -o ./src/pvc2024-win_out.o `test -f './src/win_out.c' || echo './'`./src/win_out.c
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+---- End Inlining Report ------
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+COMPILE FUNC: orbit
+
+COMPILE FUNC: draw_p
+
+COMPILE FUNC: mouse
+
+---- End Inlining Report ------
+mv -f ./src/.deps/pvc2024-win_out.Tpo ./src/.deps/pvc2024-win_out.Po
+icx -DHAVE_CONFIG_H -I.    -fcommon -fiopenmp -fopenmp-targets=spir64 -flto -Wall -O3 -xCORE-AVX2 -qopt-zmm-usage=high -qmkl=parallel -Winline -ipo -pg -qopt-report-stdout -parallel-source-info=2 -O2 -MT ./src/pvc2024-eventloop.o -MD -MP -MF ./src/.deps/pvc2024-eventloop.Tpo -c -o ./src/pvc2024-eventloop.o `test -f './src/eventloop.c' || echo './'`./src/eventloop.c
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+---- End Inlining Report ------
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+COMPILE FUNC: eventloop
+
+---- End Inlining Report ------
+mv -f ./src/.deps/pvc2024-eventloop.Tpo ./src/.deps/pvc2024-eventloop.Po
+icx -DHAVE_CONFIG_H -I.    -fcommon -fiopenmp -fopenmp-targets=spir64 -flto -Wall -O3 -xCORE-AVX2 -qopt-zmm-usage=high -qmkl=parallel -Winline -ipo -pg -qopt-report-stdout -parallel-source-info=2 -O2 -MT ./src/pvc2024-input_para.o -MD -MP -MF ./src/.deps/pvc2024-input_para.Tpo -c -o ./src/pvc2024-input_para.o `test -f './src/input_para.c' || echo './'`./src/input_para.c
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+---- End Inlining Report ------
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+COMPILE FUNC: input_para
+
+---- End Inlining Report ------
+mv -f ./src/.deps/pvc2024-input_para.Tpo ./src/.deps/pvc2024-input_para.Po
+icx -DHAVE_CONFIG_H -I.    -fcommon -fiopenmp -fopenmp-targets=spir64 -flto -Wall -O3 -xCORE-AVX2 -qopt-zmm-usage=high -qmkl=parallel -Winline -ipo -pg -qopt-report-stdout -parallel-source-info=2 -O2 -MT ./src/pvc2024-data_out.o -MD -MP -MF ./src/.deps/pvc2024-data_out.Tpo -c -o ./src/pvc2024-data_out.o `test -f './src/data_out.c' || echo './'`./src/data_out.c
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+---- End Inlining Report ------
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+DEAD STATIC FUNC: fwrite
+
+COMPILE FUNC: data_out
+
+COMPILE FUNC: current_ikr
+
+COMPILE FUNC: current_ina
+
+COMPILE FUNC: current_ical
+
+COMPILE FUNC: current_inaca
+
+COMPILE FUNC: current_inak
+
+COMPILE FUNC: current_ikur
+
+COMPILE FUNC: current_ikto
+
+COMPILE FUNC: current
+   -> INLINE: current_ikr /tmp/icx-2d119768fd/data_out-38151f.bc
+   -> INLINE: current_ina /tmp/icx-2d119768fd/data_out-38151f.bc
+   -> INLINE: current_ical /tmp/icx-2d119768fd/data_out-38151f.bc
+   -> INLINE: current_inaca /tmp/icx-2d119768fd/data_out-38151f.bc
+   -> INLINE: current_inak /tmp/icx-2d119768fd/data_out-38151f.bc
+   -> INLINE: current_ikur /tmp/icx-2d119768fd/data_out-38151f.bc
+   -> INLINE: current_ikto /tmp/icx-2d119768fd/data_out-38151f.bc
+
+---- End Inlining Report ------
+mv -f ./src/.deps/pvc2024-data_out.Tpo ./src/.deps/pvc2024-data_out.Po
+icx -fcommon -fiopenmp -fopenmp-targets=spir64 -flto -Wall -O3 -xCORE-AVX2 -qopt-zmm-usage=high -qmkl=parallel -Winline -ipo -pg -qopt-report-stdout -parallel-source-info=2 -O2   -o pvc2024 ./src/pvc2024-UHNpvc.o ./src/pvc2024-exptable.o ./src/pvc2024-mem.o ./src/pvc2024-val_constants.o ./src/pvc2024-system.o ./src/pvc2024-currents.o ./src/pvc2024-eular.o ./src/pvc2024-runge.o ./src/pvc2024-win_out.o ./src/pvc2024-eventloop.o ./src/pvc2024-input_para.o ./src/pvc2024-data_out.o /home/tsumoto/lib/icx2024/xhplot.o -lX11 -lm 
+Global optimization report for : openmp.descriptor_reg
+=================================================================
+
+Global optimization report for : openmp.descriptor_unreg
+=================================================================
+
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+COMPILE FUNC: openmp.descriptor_unreg
+
+COMPILE FUNC: openmp.descriptor_reg
+
+---- End Inlining Report ------
+Global optimization report for : main
+
+LOOP BEGIN
+    remark #15344: Loop was not vectorized: vector dependence prevents vectorization
+    remark #15346: vector dependence: assumed ANTI dependence
+    remark #15346: vector dependence: assumed ANTI dependence
+    remark #15346: vector dependence: assumed ANTI dependence
+    remark #15346: vector dependence: assumed FLOW dependence
+    remark #25436: Loop completely unrolled by 54
+LOOP END
+
+LOOP BEGIN
+    remark #25436: Loop completely unrolled by 4
+LOOP END
+
+LOOP BEGIN
+    remark #25436: Loop completely unrolled by 4
+LOOP END
+
+LOOP BEGIN
+    remark #25436: Loop completely unrolled by 4
+LOOP END
+
+LOOP BEGIN
+<Multiversioned v1>
+    remark #25228: Loop multiversioned for Data Dependence
+    remark #25399: memcopy generated
+    remark #25260: Dead loop optimized away
+LOOP END
+
+LOOP BEGIN
+    remark #15527: Loop was not vectorized: function call to  cannot be vectorized
+    remark #25436: Loop completely unrolled by 54
+LOOP END
+
+LOOP BEGIN
+    remark #15527: Loop was not vectorized: function call to  cannot be vectorized
+    remark #25436: Loop completely unrolled by 54
+LOOP END
+
+LOOP BEGIN
+    remark #15527: Loop was not vectorized: function call to  cannot be vectorized
+    remark #25436: Loop completely unrolled by 54
+LOOP END
+
+LOOP BEGIN
+    remark #15527: Loop was not vectorized: function call to  cannot be vectorized
+    remark #25436: Loop completely unrolled by 53
+LOOP END
+
+LOOP BEGIN
+    remark #15300: LOOP WAS VECTORIZED
+    remark #15305: vectorization support: vector length 4
+LOOP END
+
+LOOP BEGIN
+LOOP END
+
+LOOP BEGIN
+
+    LOOP BEGIN
+    <Multiversioned v2>
+        remark #15319: Loop was not vectorized: novector directive used
+    LOOP END
+
+    LOOP BEGIN
+    LOOP END
+
+    LOOP BEGIN
+
+        LOOP BEGIN
+
+            LOOP BEGIN
+                remark #15300: LOOP WAS VECTORIZED
+                remark #15305: vectorization support: vector length 4
+            LOOP END
+
+            LOOP BEGIN
+            <Remainder loop for vectorization>
+                remark #15439: remainder loop was vectorized (unmasked)
+                remark #15305: vectorization support: vector length 2
+                remark #25261: Single iteration loop optimized away
+            LOOP END
+
+            LOOP BEGIN
+                remark #15300: LOOP WAS VECTORIZED
+                remark #15305: vectorization support: vector length 4
+            LOOP END
+
+            LOOP BEGIN
+            <Remainder loop for vectorization>
+                remark #15439: remainder loop was vectorized (unmasked)
+                remark #15305: vectorization support: vector length 2
+                remark #25261: Single iteration loop optimized away
+            LOOP END
+
+            LOOP BEGIN
+                remark #15300: LOOP WAS VECTORIZED
+                remark #15305: vectorization support: vector length 4
+            LOOP END
+
+            LOOP BEGIN
+            <Remainder loop for vectorization>
+                remark #15439: remainder loop was vectorized (unmasked)
+                remark #15305: vectorization support: vector length 2
+                remark #25261: Single iteration loop optimized away
+            LOOP END
+
+            LOOP BEGIN
+                remark #15300: LOOP WAS VECTORIZED
+                remark #15305: vectorization support: vector length 4
+            LOOP END
+
+            LOOP BEGIN
+            <Remainder loop for vectorization>
+                remark #15439: remainder loop was vectorized (unmasked)
+                remark #15305: vectorization support: vector length 2
+                remark #25261: Single iteration loop optimized away
+            LOOP END
+        LOOP END
+    LOOP END
+LOOP END
+=================================================================
+
+Global optimization report for : function
+=================================================================
+
+Global optimization report for : xhplot
+
+LOOP BEGIN at xhplot.c (1276, 2)
+    remark #25436: Loop completely unrolled by 4
+LOOP END
+
+LOOP BEGIN at xhplot.c (1277, 2)
+    remark #25436: Loop completely unrolled by 4
+LOOP END
+
+LOOP BEGIN at xhplot.c (1280, 2)
+    remark #25436: Loop completely unrolled by 4
+LOOP END
+
+LOOP BEGIN at xhplot.c (1276, 2)
+    remark #25436: Loop completely unrolled by 4
+LOOP END
+
+LOOP BEGIN at xhplot.c (1277, 2)
+    remark #25436: Loop completely unrolled by 4
+LOOP END
+
+LOOP BEGIN at xhplot.c (1280, 2)
+    remark #25436: Loop completely unrolled by 4
+LOOP END
+
+LOOP BEGIN at xhplot.c (1188, 2)
+    remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria
+    remark #25436: Loop completely unrolled by 8
+LOOP END
+
+LOOP BEGIN at xhplot.c (1188, 2)
+    remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria
+    remark #25436: Loop completely unrolled by 8
+LOOP END
+
+LOOP BEGIN at xhplot.c (1312, 2)
+LOOP END
+
+LOOP BEGIN at xhplot.c (1238, 3)
+    remark #15521: Loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at xhplot.c (1238, 3)
+    remark #15521: Loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at xhplot.c (1398, 37)
+LOOP END
+
+LOOP BEGIN at xhplot.c (720, 2)
+LOOP END
+=================================================================
+
+Global optimization report for : init
+
+LOOP BEGIN at xhplot.c (774, 3)
+    remark #25436: Loop completely unrolled by 4
+LOOP END
+
+LOOP BEGIN at xhplot.c (801, 2)
+    remark #25436: Loop completely unrolled by 16
+LOOP END
+=================================================================
+
+Global optimization report for : axes
+
+LOOP BEGIN at xhplot.c (851, 2)
+LOOP END
+
+LOOP BEGIN at xhplot.c (851, 2)
+LOOP END
+
+LOOP BEGIN at xhplot.c (909, 2)
+LOOP END
+=================================================================
+
+Global optimization report for : draw_arrow
+
+LOOP BEGIN at xhplot.c (1146, 2)
+    remark #15300: LOOP WAS VECTORIZED
+    remark #15305: vectorization support: vector length 4
+    remark #25436: Loop completely unrolled by 1
+LOOP END
+
+LOOP BEGIN at xhplot.c (1146, 2)
+<Remainder loop for vectorization>
+LOOP END
+=================================================================
+
+Global optimization report for : line
+=================================================================
+
+Global optimization report for : scalein
+=================================================================
+
+Global optimization report for : fill
+=================================================================
+
+Global optimization report for : cylaxes
+
+LOOP BEGIN at xhplot.c (970, 2)
+LOOP END
+
+LOOP BEGIN at xhplot.c (1030, 2)
+LOOP END
+=================================================================
+
+Global optimization report for : setfont
+
+LOOP BEGIN at xhplot.c (1199, 2)
+    remark #15527: Loop was not vectorized: function call to  cannot be vectorized
+    remark #25436: Loop completely unrolled by 8
+LOOP END
+=================================================================
+
+Global optimization report for : gfcvt
+
+LOOP BEGIN at xhplot.c (1071, 9)
+LOOP END
+
+LOOP BEGIN at xhplot.c (1071, 9)
+    remark #15521: Loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+=================================================================
+
+---- Begin Inlining Report ----
+Option Values:
+  inline-threshold: 225
+  inlinehint-threshold: 325
+  inlinecold-threshold: 45
+  inlineoptsize-threshold: 15
+
+DEAD STATIC FUNC: axes_data
+
+DEAD STATIC FUNC: bitmapout
+
+DEAD STATIC FUNC: clipmask
+
+DEAD STATIC FUNC: comp_CaRU
+
+DEAD STATIC FUNC: comp_Ca_buff_blk
+
+DEAD STATIC FUNC: comp_Ca_buff_iz
+
+DEAD STATIC FUNC: comp_Ca_buff_jnc
+
+DEAD STATIC FUNC: comp_INCX
+
+DEAD STATIC FUNC: comp_IP3R
+
+DEAD STATIC FUNC: comp_bAR_kinetics
+
+DEAD STATIC FUNC: comp_buffSR_rl
+
+DEAD STATIC FUNC: comp_bund_dif
+
+DEAD STATIC FUNC: comp_icab
+
+DEAD STATIC FUNC: comp_ical
+
+DEAD STATIC FUNC: comp_ik1
+
+DEAD STATIC FUNC: comp_ikb
+
+DEAD STATIC FUNC: comp_ikr
+
+DEAD STATIC FUNC: comp_ikur
+
+DEAD STATIC FUNC: comp_ina
+
+DEAD STATIC FUNC: comp_inab
+
+DEAD STATIC FUNC: comp_inak
+
+DEAD STATIC FUNC: comp_ipmca
+
+DEAD STATIC FUNC: comp_ito
+
+DEAD STATIC FUNC: comp_jtr
+
+DEAD STATIC FUNC: comp_jup
+
+DEAD STATIC FUNC: comp_potential
+
+DEAD STATIC FUNC: current
+
+DEAD STATIC FUNC: cylpoint
+
+DEAD STATIC FUNC: data
+
+DEAD STATIC FUNC: data_out
+
+DEAD STATIC FUNC: draw_p
+
+DEAD STATIC FUNC: drawstring
+
+DEAD STATIC FUNC: eventloop
+
+DEAD STATIC FUNC: free
+
+DEAD STATIC FUNC: initial_mem
+
+DEAD STATIC FUNC: input_para
+
+DEAD STATIC FUNC: llvm.ssa.copy.i32
+
+DEAD STATIC FUNC: llvm.ssa.copy.i64
+
+DEAD STATIC FUNC: llvm.ssa.copy.p0
+
+DEAD STATIC FUNC: make_ExpTable
+
+DEAD STATIC FUNC: malloc2d
+
+DEAD STATIC FUNC: mkarrow
+
+DEAD STATIC FUNC: mouse
+
+DEAD STATIC FUNC: orbit
+
+DEAD STATIC FUNC: point
+
+DEAD STATIC FUNC: pointer
+
+DEAD STATIC FUNC: putbitmap
+
+DEAD STATIC FUNC: runge
+
+DEAD STATIC FUNC: val_consts
+
+COMPILE FUNC: axes
+   -> line ld-temp.o (861,5)
+   -> line ld-temp.o (855,5)
+   -> gfcvt ld-temp.o (1085,2)
+   -> line ld-temp.o (861,5)
+   -> line ld-temp.o (855,5)
+   -> line ld-temp.o (868,4)
+   -> line ld-temp.o (871,4)
+   -> line ld-temp.o (913,5)
+   -> gfcvt ld-temp.o (1085,2)
+   -> line ld-temp.o (919,5)
+   -> line ld-temp.o (926,4)
+   -> line ld-temp.o (929,4)
+   -> line ld-temp.o (933,3)
+   -> line ld-temp.o (934,3)
+
+COMPILE FUNC: scalein
+
+COMPILE FUNC: main
+   -> INLINE: val_consts ld-temp.o
+   -> INLINE: eventloop ld-temp.o
+      -> xhplot ld-temp.o
+      -> INLINE: xhplot ld-temp.o
+         -> INLINE: data ld-temp.o (101,3)
+         -> INLINE: axes_data ld-temp.o (102,3)
+         -> INLINE: pointer ld-temp.o (281,3)
+         -> INLINE: point ld-temp.o (284,3)
+         -> INLINE: cylpoint ld-temp.o (287,3)
+         -> INLINE: clipmask ld-temp.o (186,3)
+         -> INLINE: putbitmap ld-temp.o (242,3)
+         -> INLINE: mkarrow ld-temp.o (253,3)
+         -> INLINE: drawstring ld-temp.o (269,3)
+         -> INLINE: bitmapout ld-temp.o (306,3)
+      -> xhplot ld-temp.o
+      -> INLINE: xhplot ld-temp.o
+         -> INLINE: data ld-temp.o (101,3)
+         -> INLINE: axes_data ld-temp.o (102,3)
+         -> INLINE: pointer ld-temp.o (281,3)
+         -> INLINE: point ld-temp.o (284,3)
+         -> INLINE: cylpoint ld-temp.o (287,3)
+         -> INLINE: clipmask ld-temp.o (186,3)
+         -> INLINE: putbitmap ld-temp.o (242,3)
+         -> INLINE: mkarrow ld-temp.o (253,3)
+         -> INLINE: drawstring ld-temp.o (269,3)
+         -> INLINE: bitmapout ld-temp.o (306,3)
+      -> xhplot ld-temp.o
+      -> INLINE: xhplot ld-temp.o
+         -> INLINE: data ld-temp.o (101,3)
+         -> INLINE: axes_data ld-temp.o (102,3)
+         -> INLINE: pointer ld-temp.o (281,3)
+         -> INLINE: point ld-temp.o (284,3)
+         -> INLINE: cylpoint ld-temp.o (287,3)
+         -> INLINE: clipmask ld-temp.o (186,3)
+         -> INLINE: putbitmap ld-temp.o (242,3)
+         -> INLINE: mkarrow ld-temp.o (253,3)
+         -> INLINE: drawstring ld-temp.o (269,3)
+         -> INLINE: bitmapout ld-temp.o (306,3)
+      -> xhplot ld-temp.o
+      -> DELETE: fprintf ld-temp.o
+   -> INLINE: orbit ld-temp.o
+      -> xhplot ld-temp.o
+      -> xhplot ld-temp.o
+   -> INLINE: current ld-temp.o
+   -> INLINE: draw_p ld-temp.o
+      -> xhplot ld-temp.o
+      -> xhplot ld-temp.o
+      -> xhplot ld-temp.o
+      -> xhplot ld-temp.o
+   -> INLINE: mouse ld-temp.o
+   -> INLINE: runge ld-temp.o
+      -> function ld-temp.o
+      -> function ld-temp.o
+      -> function ld-temp.o
+      -> function ld-temp.o
+   -> INLINE: xhplot ld-temp.o
+      -> INLINE: data ld-temp.o (101,3)
+         -> DELETE: mcount ld-temp.o (700,0)
+         -> DELETE: __isoc99_scanf ld-temp.o (706,2)
+         -> DELETE: getc ld-temp.o (49,10)
+         -> DELETE: __isoc99_scanf ld-temp.o (712,2)
+         -> DELETE: getc ld-temp.o (49,10)
+      -> INLINE: axes_data ld-temp.o (102,3)
+         -> DELETE: mcount ld-temp.o (719,0)
+         -> DELETE: __isoc99_scanf ld-temp.o (725,3)
+         -> DELETE: getc ld-temp.o (49,10)
+         -> DELETE: llvm.pow.f64 ld-temp.o (1189,40)
+         -> DELETE: llvm.pow.f64 ld-temp.o (1189,40)
+         -> DELETE: __isoc99_scanf ld-temp.o (732,6)
+         -> DELETE: getc ld-temp.o (49,10)
+         -> DELETE: __isoc99_scanf ld-temp.o (738,6)
+         -> DELETE: getc ld-temp.o (49,10)
+         -> DELETE: setfont ld-temp.o (741,3)
+         -> DELETE: __isoc99_scanf ld-temp.o (746,3)
+         -> DELETE: getc ld-temp.o (49,10)
+         -> DELETE: __isoc99_scanf ld-temp.o (752,6)
+         -> DELETE: getc ld-temp.o (49,10)
+      -> DELETE: axes ld-temp.o (225,3)
+      -> DELETE: axes ld-temp.o (198,3)
+      -> DELETE: axes ld-temp.o (103,3)
+      -> DELETE: scalein ld-temp.o (277,3)
+      -> DELETE: scalein ld-temp.o (261,3)
+      -> DELETE: scalein ld-temp.o (168,3)
+      -> DELETE: cylaxes ld-temp.o (236,3)
+      -> DELETE: cylaxes ld-temp.o (210,3)
+      -> INLINE: pointer ld-temp.o (281,3)
+         -> DELETE: mcount ld-temp.o (351,0)
+         -> DELETE: XSelectInput ld-temp.o (355,2)
+         -> DELETE: XNextEvent ld-temp.o (357,3)
+         -> DELETE: fprintf ld-temp.o (364,5)
+         -> DELETE: fprintf ld-temp.o (368,5)
+         -> DELETE: fflush ld-temp.o (369,5)
+         -> DELETE: fprintf ld-temp.o (372,5)
+      -> INLINE: point ld-temp.o (284,3)
+         -> DELETE: mcount ld-temp.o (383,0)
+         -> DELETE: XSelectInput ld-temp.o (388,2)
+         -> DELETE: XCheckMaskEvent ld-temp.o (389,9)
+         -> DELETE: fprintf ld-temp.o (398,6)
+      -> INLINE: cylpoint ld-temp.o (287,3)
+         -> DELETE: mcount ld-temp.o (412,0)
+         -> DELETE: XSelectInput ld-temp.o (417,2)
+         -> DELETE: XCheckMaskEvent ld-temp.o (418,9)
+         -> DELETE: acos ld-temp.o (620,7)
+         -> DELETE: asin ld-temp.o (621,7)
+         -> DELETE: fprintf ld-temp.o (427,6)
+      -> DELETE: init ld-temp.o (94,3)
+      -> DELETE: XCreateGC ld-temp.o (98,8)
+      -> DELETE: XSetForeground ld-temp.o (99,3)
+      -> DELETE: XSetBackground ld-temp.o (100,3)
+      -> DELETE: draw_arrow ld-temp.o (105,4)
+      -> DELETE: draw_arrow ld-temp.o (106,4)
+      -> DELETE: XSetClipRectangles ld-temp.o (444,2)
+      -> DELETE: XSetForeground ld-temp.o (695,2)
+      -> DELETE: XDrawPoint ld-temp.o (629,2)
+      -> DELETE: fflush ld-temp.o (121,3)
+      -> DELETE: llvm.cos.f64 ld-temp.o (597,23)
+      -> DELETE: llvm.sin.f64 ld-temp.o (598,40)
+      -> DELETE: XSetForeground ld-temp.o (695,2)
+      -> DELETE: XDrawPoint ld-temp.o (629,2)
+      -> DELETE: XSetForeground ld-temp.o (695,2)
+      -> DELETE: line ld-temp.o (138,3)
+      -> DELETE: XSetForeground ld-temp.o (695,2)
+      -> DELETE: llvm.cos.f64 ld-temp.o (597,23)
+      -> DELETE: llvm.sin.f64 ld-temp.o (598,40)
+      -> DELETE: line ld-temp.o (145,3)
+      -> DELETE: XClearWindow ld-temp.o (150,3)
+      -> DELETE: XSetLineAttributes ld-temp.o (561,3)
+      -> DELETE: XSetLineAttributes ld-temp.o (571,3)
+      -> DELETE: __isoc99_scanf ld-temp.o (674,6)
+      -> DELETE: getc ld-temp.o (49,10)
+      -> DELETE: XSetForeground ld-temp.o (695,2)
+      -> DELETE: XSetArcMode ld-temp.o (688,2)
+      -> DELETE: XFillArc ld-temp.o (689,2)
+      -> DELETE: fprintf ld-temp.o (451,3)
+      -> DELETE: exit ld-temp.o (452,3)
+      -> DELETE: XSetForeground ld-temp.o (695,2)
+      -> DELETE: XDrawPoints ld-temp.o (634,2)
+      -> DELETE: XSetForeground ld-temp.o (695,2)
+      -> DELETE: XDrawLines ld-temp.o (664,2)
+      -> DELETE: fill ld-temp.o (180,3)
+      -> DELETE: fill ld-temp.o (183,3)
+      -> INLINE: clipmask ld-temp.o (186,3)
+         -> DELETE: mcount ld-temp.o (459,0)
+         -> DELETE: XCreatePixmap ld-temp.o (463,10)
+         -> DELETE: XCreateGC ld-temp.o (465,10)
+         -> DELETE: XSetFillStyle ld-temp.o (466,2)
+         -> DELETE: XSetFillRule ld-temp.o (467,2)
+         -> DELETE: XSetForeground ld-temp.o (468,2)
+         -> DELETE: XFillRectangle ld-temp.o (469,2)
+         -> DELETE: XSetForeground ld-temp.o (470,2)
+         -> DELETE: XFillPolygon ld-temp.o (471,2)
+         -> DELETE: XSetClipMask ld-temp.o (473,2)
+         -> DELETE: XFreePixmap ld-temp.o (474,2)
+      -> DELETE: XSetClipRectangles ld-temp.o (444,2)
+      -> DELETE: XSetClipRectangles ld-temp.o (444,2)
+      -> DELETE: llvm.memcpy.p0.p0.i64 ld-temp.o (1276,7)
+      -> DELETE: strcpy ld-temp.o (1284,2)
+      -> DELETE: XLoadQueryFont ld-temp.o (1285,9)
+      -> DELETE: XSetFont ld-temp.o (1286,2)
+      -> DELETE: draw_arrow ld-temp.o (200,4)
+      -> DELETE: draw_arrow ld-temp.o (202,4)
+      -> DELETE: XSetClipRectangles ld-temp.o (444,2)
+      -> DELETE: XSetClipRectangles ld-temp.o (444,2)
+      -> DELETE: XSetClipRectangles ld-temp.o (444,2)
+      -> DELETE: init ld-temp.o (215,3)
+      -> DELETE: XCreateGC ld-temp.o (218,8)
+      -> DELETE: XSetForeground ld-temp.o (219,3)
+      -> DELETE: XSetBackground ld-temp.o (220,3)
+      -> DELETE: llvm.memcpy.p0.p0.i64 ld-temp.o (1276,7)
+      -> DELETE: strcpy ld-temp.o (1284,2)
+      -> DELETE: XLoadQueryFont ld-temp.o (1285,9)
+      -> DELETE: XSetFont ld-temp.o (1286,2)
+      -> DELETE: draw_arrow ld-temp.o (227,4)
+      -> DELETE: draw_arrow ld-temp.o (229,4)
+      -> DELETE: XSetClipRectangles ld-temp.o (444,2)
+      -> DELETE: XSetClipRectangles ld-temp.o (444,2)
+      -> DELETE: XSetClipRectangles ld-temp.o (444,2)
+      -> DELETE: XSetClipRectangles ld-temp.o (444,2)
+      -> DELETE: XSetForeground ld-temp.o (695,2)
+      -> INLINE: putbitmap ld-temp.o (242,3)
+         -> DELETE: mcount ld-temp.o (514,0)
+         -> DELETE: XReadBitmapFile ld-temp.o (538,6)
+         -> DELETE: fprintf ld-temp.o (540,3)
+         -> DELETE: exit ld-temp.o (541,3)
+         -> DELETE: __isoc99_scanf ld-temp.o (523,2)
+         -> DELETE: XCopyPlane ld-temp.o (524,2)
+      -> DELETE: __isoc99_scanf ld-temp.o (1119,2)
+      -> DELETE: XSetForeground ld-temp.o (695,2)
+      -> DELETE: draw_arrow ld-temp.o (1134,2)
+      -> INLINE: mkarrow ld-temp.o (253,3)
+         -> DELETE: mcount ld-temp.o (1362,0)
+         -> DELETE: XSelectInput ld-temp.o (1380,2)
+         -> DELETE: XNextEvent ld-temp.o (1383,3)
+         -> DELETE: XNextEvent ld-temp.o (1383,3)
+         -> DELETE: printf ld-temp.o (1390,6)
+         -> DELETE: XNextEvent ld-temp.o (1383,3)
+         -> DELETE: XLookupString ld-temp.o (1399,4)
+         -> DELETE: printf ld-temp.o (1395,6)
+         -> DELETE: atan2 ld-temp.o (1406,8)
+         -> DELETE: llvm.sin.f64 ld-temp.o (1408,7)
+         -> DELETE: llvm.cos.f64 ld-temp.o (1408,22)
+         -> DELETE: XFillPolygon ld-temp.o (1431,2)
+      -> DELETE: XReadBitmapFile ld-temp.o (538,6)
+      -> DELETE: fprintf ld-temp.o (540,3)
+      -> DELETE: exit ld-temp.o (541,3)
+      -> DELETE: XSetForeground ld-temp.o (695,2)
+      -> DELETE: XCopyPlane ld-temp.o (532,2)
+      -> DELETE: setfont ld-temp.o (265,3)
+      -> DELETE: XSetForeground ld-temp.o (695,2)
+      -> INLINE: drawstring ld-temp.o (269,3)
+         -> DELETE: mcount ld-temp.o (1217,0)
+         -> DELETE: __isoc99_scanf ld-temp.o (1235,2)
+         -> DELETE: __isoc99_scanf ld-temp.o (1239,4)
+         -> DELETE: __isoc99_scanf ld-temp.o (1225,2)
+         -> DELETE: strlen ld-temp.o (1226,67)
+         -> DELETE: XDrawString ld-temp.o (1226,2)
+      -> DELETE: __isoc99_scanf ld-temp.o (1235,2)
+      -> DELETE: __isoc99_scanf ld-temp.o (1239,4)
+      -> DELETE: XSetForeground ld-temp.o (695,2)
+      -> DELETE: strlen ld-temp.o (1249,67)
+      -> DELETE: XDrawString ld-temp.o (1249,2)
+      -> DELETE: XCheckMaskEvent ld-temp.o (1296,9)
+      -> DELETE: XLookupString ld-temp.o (1299,4)
+      -> DELETE: XSelectInput ld-temp.o (1311,2)
+      -> DELETE: XNextEvent ld-temp.o (1313,3)
+      -> DELETE: XLookupString ld-temp.o (1315,4)
+      -> DELETE: XCloseDisplay ld-temp.o (296,3)
+      -> DELETE: __isoc99_scanf ld-temp.o (343,2)
+      -> DELETE: sprintf ld-temp.o (345,2)
+      -> DELETE: system ld-temp.o (346,2)
+      -> INLINE: bitmapout ld-temp.o (306,3)
+         -> DELETE: mcount ld-temp.o (1324,0)
+         -> DELETE: printf ld-temp.o (1335,2)
+         -> DELETE: XGetGeometry ld-temp.o (1337,2)
+         -> DELETE: XCreatePixmap ld-temp.o (1338,12)
+         -> DELETE: XCreateGC ld-temp.o (1339,8)
+         -> DELETE: XCopyArea ld-temp.o (1342,7)
+         -> DELETE: XWriteBitmapFile ld-temp.o (1344,7)
+         -> DELETE: XCopyPlane ld-temp.o (1348,7)
+         -> DELETE: XWriteBitmapFile ld-temp.o (1350,7)
+         -> DELETE: printf ld-temp.o (1354,4)
+         -> DELETE: XFreePixmap ld-temp.o (1357,5)
+         -> DELETE: XFreeGC ld-temp.o (1358,5)
+      -> DELETE: fprintf ld-temp.o (309,3)
+      -> DELETE: XFlush ld-temp.o (312,2)
+   -> xhplot ld-temp.o
+   -> xhplot ld-temp.o
+   -> DELETE: free ld-temp.o
+   -> DELETE: free ld-temp.o
+   -> DELETE: free ld-temp.o
+   -> DELETE: free ld-temp.o
+   -> DELETE: free ld-temp.o
+   -> DELETE: free ld-temp.o
+   -> DELETE: free ld-temp.o
+   -> DELETE: free ld-temp.o
+   -> DELETE: free ld-temp.o
+   -> INLINE: input_para ld-temp.o
+      -> INLINE: malloc2d ld-temp.o
+      -> DELETE: __isoc99_fscanf ld-temp.o
+      -> DELETE: printf ld-temp.o
+      -> DELETE: __isoc99_fscanf ld-temp.o
+      -> DELETE: __isoc99_fscanf ld-temp.o
+      -> DELETE: __isoc99_fscanf ld-temp.o
+      -> DELETE: __isoc99_fscanf ld-temp.o
+      -> DELETE: __isoc99_fscanf ld-temp.o
+      -> DELETE: __isoc99_fscanf ld-temp.o
+      -> DELETE: __isoc99_fscanf ld-temp.o
+      -> DELETE: __isoc99_fscanf ld-temp.o
+      -> DELETE: __isoc99_fscanf ld-temp.o
+      -> DELETE: __isoc99_fscanf ld-temp.o
+      -> DELETE: __isoc99_fscanf ld-temp.o
+      -> DELETE: __isoc99_fscanf ld-temp.o
+      -> DELETE: __isoc99_fscanf ld-temp.o
+      -> DELETE: __isoc99_fscanf ld-temp.o
+      -> DELETE: __isoc99_fscanf ld-temp.o
+      -> DELETE: __isoc99_fscanf ld-temp.o
+      -> DELETE: __isoc99_fscanf ld-temp.o
+   -> INLINE: initial_mem ld-temp.o
+   -> INLINE: make_ExpTable ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+   -> INLINE: data_out ld-temp.o
+      -> DELETE: printf ld-temp.o
+      -> DELETE: fprintf ld-temp.o
+   -> DELETE: fprintf ld-temp.o
+   -> DELETE: printf ld-temp.o
+   -> llvm.fabs.f64 ld-temp.o
+   -> DELETE: llvm.memcpy.p0.p0.i64 ld-temp.o
+   -> llvm.memcpy.p0.p0.i64 ld-temp.o
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o
+   -> DELETE: llvm.ssa.copy.p0 ld-temp.o
+   -> DELETE: llvm.ssa.copy.p0 ld-temp.o
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o
+
+COMPILE FUNC: function
+   -> INLINE: comp_bAR_kinetics ld-temp.o
+   -> INLINE: comp_Ca_buff_blk ld-temp.o
+   -> INLINE: comp_Ca_buff_iz ld-temp.o
+   -> INLINE: comp_Ca_buff_jnc ld-temp.o
+   -> INLINE: comp_buffSR_rl ld-temp.o
+   -> INLINE: comp_bund_dif ld-temp.o
+   -> INLINE: comp_potential ld-temp.o
+      -> llvm.log.f64 ld-temp.o
+      -> llvm.log.f64 ld-temp.o
+      -> llvm.log.f64 ld-temp.o
+      -> llvm.log.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+   -> INLINE: comp_ina ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+   -> INLINE: comp_ical ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+   -> INLINE: comp_ikur ld-temp.o
+   -> INLINE: comp_ito ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+   -> INLINE: comp_ik1 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+   -> INLINE: comp_ikr ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+   -> INLINE: comp_inab ld-temp.o
+   -> INLINE: comp_ikb ld-temp.o
+   -> INLINE: comp_icab ld-temp.o
+   -> INLINE: comp_inak ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+   -> INLINE: comp_INCX ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.powi.f64.i32 ld-temp.o
+      -> llvm.powi.f64.i32 ld-temp.o
+   -> INLINE: comp_ipmca ld-temp.o
+      -> DELETE: llvm.pow.f64 ld-temp.o
+      -> DELETE: llvm.pow.f64 ld-temp.o
+      -> llvm.pow.f64 ld-temp.o
+   -> INLINE: comp_CaRU ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> DELETE: llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.exp.f64 ld-temp.o
+      -> llvm.pow.f64 ld-temp.o
+      -> llvm.pow.f64 ld-temp.o
+      -> llvm.pow.f64 ld-temp.o
+      -> llvm.pow.f64 ld-temp.o
+      -> llvm.pow.f64 ld-temp.o
+      -> llvm.pow.f64 ld-temp.o
+   -> INLINE: comp_jtr ld-temp.o
+   -> INLINE: comp_jup ld-temp.o
+   -> INLINE: comp_IP3R ld-temp.o
+      -> llvm.powi.f64.i32 ld-temp.o
+   -> llvm.memset.p0.i64 ld-temp.o
+
+COMPILE FUNC: xhplot
+   -> INLINE: data ld-temp.o (101,3)
+   -> INLINE: axes_data ld-temp.o (102,3)
+      -> DELETE: llvm.pow.f64 ld-temp.o (1189,40)
+      -> DELETE: llvm.pow.f64 ld-temp.o (1189,40)
+      -> setfont ld-temp.o (741,3)
+      -> DELETE: llvm.pow.f64 ld-temp.o (1189,40)
+      -> DELETE: llvm.pow.f64 ld-temp.o (1189,40)
+      -> DELETE: llvm.pow.f64 ld-temp.o (1189,40)
+      -> DELETE: llvm.pow.f64 ld-temp.o (1189,40)
+      -> DELETE: llvm.pow.f64 ld-temp.o (1189,40)
+      -> DELETE: llvm.pow.f64 ld-temp.o (1189,40)
+      -> DELETE: llvm.pow.f64 ld-temp.o (1189,40)
+      -> DELETE: llvm.pow.f64 ld-temp.o (1189,40)
+      -> DELETE: llvm.pow.f64 ld-temp.o (1189,40)
+      -> DELETE: llvm.pow.f64 ld-temp.o (1189,40)
+      -> DELETE: llvm.pow.f64 ld-temp.o (1189,40)
+      -> DELETE: llvm.pow.f64 ld-temp.o (1189,40)
+      -> DELETE: llvm.pow.f64 ld-temp.o (1189,40)
+      -> DELETE: llvm.pow.f64 ld-temp.o (1189,40)
+      -> DELETE: llvm.pow.f64 ld-temp.o (1189,40)
+      -> DELETE: llvm.pow.f64 ld-temp.o (1189,40)
+   -> axes ld-temp.o (225,3)
+   -> axes ld-temp.o (198,3)
+   -> axes ld-temp.o (103,3)
+   -> scalein ld-temp.o (277,3)
+   -> scalein ld-temp.o (261,3)
+   -> scalein ld-temp.o (168,3)
+   -> cylaxes ld-temp.o (236,3)
+   -> cylaxes ld-temp.o (210,3)
+   -> INLINE: pointer ld-temp.o (281,3)
+      -> DELETE: mcount ld-temp.o (351,0)
+      -> DELETE: XSelectInput ld-temp.o (355,2)
+      -> DELETE: XNextEvent ld-temp.o (357,3)
+      -> DELETE: fprintf ld-temp.o (364,5)
+      -> DELETE: fprintf ld-temp.o (368,5)
+      -> DELETE: fflush ld-temp.o (369,5)
+      -> DELETE: fprintf ld-temp.o (372,5)
+   -> INLINE: point ld-temp.o (284,3)
+   -> INLINE: cylpoint ld-temp.o (287,3)
+   -> init ld-temp.o (94,3)
+   -> draw_arrow ld-temp.o (105,4)
+   -> draw_arrow ld-temp.o (106,4)
+   -> llvm.cos.f64 ld-temp.o (597,23)
+   -> llvm.sin.f64 ld-temp.o (598,40)
+   -> line ld-temp.o (138,3)
+   -> llvm.cos.f64 ld-temp.o (597,23)
+   -> llvm.sin.f64 ld-temp.o (598,40)
+   -> line ld-temp.o (145,3)
+   -> fill ld-temp.o (180,3)
+   -> fill ld-temp.o (183,3)
+   -> INLINE: clipmask ld-temp.o (186,3)
+   -> DELETE: XSetClipRectangles ld-temp.o (444,2)
+   -> DELETE: llvm.memcpy.p0.p0.i64 ld-temp.o (1276,7)
+   -> draw_arrow ld-temp.o (200,4)
+   -> draw_arrow ld-temp.o (202,4)
+   -> DELETE: init ld-temp.o (215,3)
+   -> DELETE: XCreateGC ld-temp.o (218,8)
+   -> DELETE: XSetForeground ld-temp.o (219,3)
+   -> DELETE: XSetBackground ld-temp.o (220,3)
+   -> DELETE: llvm.memcpy.p0.p0.i64 ld-temp.o (1276,7)
+   -> draw_arrow ld-temp.o (227,4)
+   -> draw_arrow ld-temp.o (229,4)
+   -> INLINE: putbitmap ld-temp.o (242,3)
+   -> draw_arrow ld-temp.o (1134,2)
+   -> INLINE: mkarrow ld-temp.o (253,3)
+      -> llvm.sin.f64 ld-temp.o (1408,7)
+      -> llvm.cos.f64 ld-temp.o (1408,22)
+   -> setfont ld-temp.o (265,3)
+   -> INLINE: drawstring ld-temp.o (269,3)
+   -> INLINE: bitmapout ld-temp.o (306,3)
+   -> init ld-temp.o (215,3)
+   -> llvm.memcpy.p0.p0.i64 ld-temp.o (1276,7)
+   -> llvm.memcpy.p0.p0.i64 ld-temp.o (1276,7)
+   -> DELETE: llvm.ssa.copy.i32 ld-temp.o
+   -> DELETE: llvm.ssa.copy.i32 ld-temp.o (1188,22)
+   -> DELETE: llvm.ssa.copy.i32 ld-temp.o
+   -> DELETE: llvm.ssa.copy.i32 ld-temp.o (1188,22)
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o (1276,22)
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o (1277,22)
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o (1280,22)
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o (1276,22)
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o (1277,22)
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o (1280,22)
+
+COMPILE FUNC: cylaxes
+   -> llvm.sin.f64 ld-temp.o (975,7)
+   -> llvm.cos.f64 ld-temp.o (976,7)
+   -> line ld-temp.o (981,3)
+   -> line ld-temp.o (1033,5)
+   -> gfcvt ld-temp.o (1085,2)
+   -> line ld-temp.o (1037,5)
+   -> line ld-temp.o (1042,2)
+
+COMPILE FUNC: init
+   -> DELETE: strcpy ld-temp.o (775,4)
+   -> DELETE: strcpy ld-temp.o (776,4)
+   -> DELETE: strcpy ld-temp.o (777,4)
+   -> DELETE: XCreateWindow ld-temp.o (789,8)
+   -> DELETE: XStoreName ld-temp.o (793,2)
+   -> DELETE: XSetClassHint ld-temp.o (796,9)
+   -> DELETE: XMapWindow ld-temp.o (797,2)
+   -> DELETE: XMaskEvent ld-temp.o (799,2)
+   -> DELETE: XAllocNamedColor ld-temp.o (802,3)
+   -> DELETE: strcpy ld-temp.o (775,4)
+   -> DELETE: strcpy ld-temp.o (776,4)
+   -> DELETE: strcpy ld-temp.o (775,4)
+   -> DELETE: strcpy ld-temp.o (776,4)
+   -> DELETE: strcpy ld-temp.o (775,4)
+   -> DELETE: strcpy ld-temp.o (776,4)
+   -> DELETE: strcpy ld-temp.o (775,4)
+   -> DELETE: strcpy ld-temp.o (776,4)
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o (774,23)
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o (801,28)
+   -> DELETE: llvm.memcpy.p0.p0.i64 ld-temp.o (776,4)
+   -> DELETE: llvm.memcpy.p0.p0.i64 ld-temp.o (776,4)
+   -> DELETE: llvm.memcpy.p0.p0.i64 ld-temp.o (775,4)
+   -> DELETE: llvm.memcpy.p0.p0.i64 ld-temp.o (776,4)
+   -> DELETE: llvm.memcpy.p0.p0.i64 ld-temp.o (775,4)
+   -> DELETE: llvm.memcpy.p0.p0.i64 ld-temp.o (776,4)
+   -> llvm.memcpy.p0.p0.i64 ld-temp.o (775,4)
+   -> llvm.memcpy.p0.p0.i64 ld-temp.o (775,4)
+
+COMPILE FUNC: setfont
+   -> DELETE: __isoc99_scanf ld-temp.o (1203,3)
+   -> DELETE: strchr ld-temp.o (1204,7)
+   -> DELETE: strcpy ld-temp.o (1205,4)
+   -> DELETE: XLoadQueryFont ld-temp.o (1206,15)
+   -> DELETE: fprintf ld-temp.o (1207,4)
+   -> DELETE: llvm.ssa.copy.i32 ld-temp.o (1208,8)
+
+COMPILE FUNC: line
+   -> llvm.sqrt.f64 ld-temp.o (650,15)
+
+COMPILE FUNC: gfcvt
+   -> llvm.fabs.f64 ld-temp.o (1058,6)
+   -> llvm.pow.f64 ld-temp.o (1058,16)
+   -> llvm.umax.i32 ld-temp.o (1069,17)
+   -> llvm.memset.p0.i64 ld-temp.o (1069,65)
+   -> llvm.umax.i32 ld-temp.o (1069,17)
+
+COMPILE FUNC: draw_arrow
+   -> DELETE: llvm.ssa.copy.i64 ld-temp.o (1146,22)
+
+COMPILE FUNC: fill
+
+---- End Inlining Report ------
+make[1]: ディレクトリ '/home/tsumoto/work/PVcell2024_ver1.0.3' から出ます

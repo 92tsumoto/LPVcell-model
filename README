@@ -1,0 +1,12 @@
+This is a pulmonary myocardial cell model developed on the compartment structure of HuVEC model.
+The CaRU of Hinch et al (2004) is used to describe the local control theory for the CICR at the dyadic junction.
+The compartments were adjusted based on the Microdomain [Ca2+] near ryanodine receptors as reported by L-type Ca2+ 
+and Na+/Ca2+ exchange currents: Karoly Acsai, Gudrun Antoons, Leonid Livshitz, Yoram Rudy and Karin R. Sipido. 
+J Physiol. 589(10), (2011) pp.2569–2583.
+
+The first version of this model was developed by Umehara in 2015-17 during his master course under the guidance of 
+Prof. A Amano. The model is based on the rat experimental data published by the K.Ono group Akita (Y. Okamoto, et al., 
+J Mol Cell Cardiol. 52, 988-997, 2012.)
+
+unit concentration; mM, time msec, volume; fL, current pA/pF, quantity; attomole
+
